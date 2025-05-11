@@ -11,11 +11,12 @@ header {
     align-items: center;
 }
 
-header .logo {
-    margin-left: 20px;
-    font-size: 24px;
+.logo {
+    margin: 20px;
+    font-size: 28px;
     font-weight: bold;
-    color: #FFFFFF;
+    color: #f0f8ff;
+    font-family: "URW Bookman";
 }
 
 nav ul li {
@@ -160,6 +161,35 @@ h2 {
     padding: 10px;
     
 }
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333333;
+    margin-top: 50px;
+    padding-top: 15px;
+    color: #f0f8ff;
+    flex-wrap: wrap;
+
+}
+.addr p{
+    text-align: left;
+}
+.developer p{
+    text-align: left;
+}
+
+.socialmedia a {
+    margin: 0 10px;
+    color: #FFFFFF;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.socialmedia a:hover {
+    color: #FF7F32;
+}
 
 @media (max-width: 767px) {
     nav ul {
@@ -184,7 +214,7 @@ h2 {
     }
 
     .menu-toggle {
-        display: block;
+        display: inline-block;
         background-color: transparent;
         border: none;
         color: #FFFFFF;
@@ -238,6 +268,14 @@ h2 {
 @media (min-width: 1024px) {
     body {
         font-size: 18px;
+    }
+    .hero-text{
+        position: absolute;
+        left: 18%;
+        width: 60%;
+    }
+    .hero-text p{
+        font-size: 20px;
     }
 
     .home-main-card {
