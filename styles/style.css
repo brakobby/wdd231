@@ -1,301 +1,110 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
-header {
-    background-color: #003366;
-    display: flex;
-    justify-content: space-between;
-    color: #FFFFFF;
-    align-items: center;
-}
-
-.logo {
-    margin: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #f0f8ff;
-    font-family: "URW Bookman";
-}
-
-nav ul li {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-nav a {
-    padding: 15px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+body{
+    font-family: "Roboto";
     font-size: 16px;
-    text-decoration: none;
-    color: #FFFFFF;
-}
 
-nav a:hover {
-    background-color: #FF7F32;
 }
-
-.hero-image {
-    width: 100%;
-    position: relative;
-}
-
-.hero-text {
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    background-color: #33333370;
-    padding: 20px;
-    text-align: center;
-    color: #F4F4F4;
-}
-
-.hero-text h1, p {
-    padding-bottom: 10px;
-}
-
-.hero-text p {
-    font-size: 16px;
-}
-
-.join, .explore {
-    width: 210px;
-    height: 25px;
-    border: 0;
-    font-size: 16px;
-    border-radius: 10px;
-    background-color: #ff8132e7;
-    color: #f1d6d6;
-    margin-top: 10px;
-    height: 40px;
-    cursor: pointer;
-}
-
-.home-main-card {
+header{
+    background-color: #2A5D9F;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    padding: 1rem;
-}
-
-.event-card {
-    grid-column: span 2;
-    background-color: #fff4e6;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.current-weather-card,
-.weather-forecast-card {
-    background-color: #f0f8ff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-body {
-    font-size: 14px;
-}
-
-.home-main-card {
     grid-template-columns: 1fr;
-}
-
-.event-card {
-    grid-column: span 1;
-}
-
-.hero-image {
-    height: 200px;
-    object-fit: cover;
-}
-
-.hero-text {
-    top: 10%;
-    left: 5%;
-    font-size: 14px;
-    padding: 10px;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.hero-text p {
-    display: none;
-}
-.profiles{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
-    flex-wrap: wrap;
-}
-.profile1{
-    width: 500px;
-    height: auto;
-    background-color: #FF7F32;  
-    margin: 10px;
-    border-radius: 10px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.profile1 h3{
-    padding-top: 10px;
-}
-.profile1 h3,p{
-    text-align: center;
+    padding: 20px;
     
 }
-.profile1-content{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #ffffff;
-}
-.profile1-content img{
-    width: 100px;
-    height: auto;
-    padding: 10px;
-    
-}
-footer{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #333333;
-    margin-top: 50px;
-    padding-top: 15px;
-    color: #f0f8ff;
-    flex-wrap: wrap;
-
-}
-.addr p{
-    text-align: left;
-}
-.developer p{
-    text-align: left;
-}
-
-.socialmedia a {
-    margin: 0 10px;
+.name{
     color: #FFFFFF;
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.logo{
+    width: 25px;
+    padding-right: 10px;
+}
+nav{
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+nav a{
+    margin-left: 10px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 1em;
 }
-
-.socialmedia a:hover {
-    color: #FF7F32;
+nav a:hover{
+    background-color: #F4A300;
 }
-
-@media (max-width: 767px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.7);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 10;
-        padding: 10px 0;
-    }
-
-    .hero-text {
-        position: absolute;
-        top: 5%;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: inline-block;
-        background-color: transparent;
-        border: none;
-        color: #FFFFFF;
-        font-size: 24px;
-        cursor: pointer;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 11;
-    }
+h1{
+    text-align: center;
 }
-
-@media (min-width: 768px) {
-    body {
-        font-size: 16px;
-    }
-
-    .home-main-card {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .event-card {
-        grid-column: span 1;
-    }
-
-    .hero-image {
-        height: 300px;
-    }
-
-    .hero-text {
-        top: 15%;
-        left: 10%;
-        font-size: 16px;
-        padding: 15px;
-    }
-
-    .hero-text p {
-        display: block;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        background-color: transparent;
-        width: auto;
-        padding: 0;
-    }
+.main-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 6em;
 }
+.work{
+    width: 800px;
+    height: 300px;
+    box-shadow: 5px 10px 5px rgb(208, 204, 204);
+    border-radius: 10px;
+}
+.work h2{
+    background-color:#2A5D9F;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+}
+.location{
+    width: 500px;
+    height: 300px;
+    box-shadow: 5px 10px 5px rgb(208, 204, 204);
+    margin-left: 4em;
+  
+}
+.location h2{
+    background-color:#2A5D9F;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+.location img{
+    width: 500px;
+}
+.courses{
+    width: 85em;
+    height: 500px;
+    box-shadow: 5px 10px 5px rgb(208, 204, 204);
+    margin-left: 6em;
+    margin-top: 25px;
+}
+.courses h2{
+    background-color:#2A5D9F;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+.course-nav-btn{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+}
+.course-nav-btn button{
+    
+    width: 100px;
+    
 
-@media (min-width: 1024px) {
-    body {
-        font-size: 18px;
-    }
-    .hero-text{
-        position: absolute;
-        left: 18%;
-        width: 60%;
-    }
-    .hero-text p{
-        font-size: 20px;
-    }
-
-    .home-main-card {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .event-card {
-        grid-column: span 2;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        background-color: transparent;
-        width: auto;
-        padding: 0;
-    }
-
-    .menu-toggle {
-        display: none;
-    }
 }
