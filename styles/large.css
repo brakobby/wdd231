@@ -1,0 +1,28 @@
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+    
+    .navigation {
+        display: block;
+        width: auto;
+    }
+    
+    .navigation ul {
+        flex-direction: row;
+    }
+    
+    .info-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .courses-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .courses-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
