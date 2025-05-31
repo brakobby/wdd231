@@ -1,0 +1,146 @@
+[
+    {
+        "name": "Sunrise Bakery",
+        "address": "Tema West",
+        "phone": "(555) 123-4567",
+        "websiteURL": "https",
+        "imageFileName": "farmer.avif",
+        "membershipLevel": 3,
+        "description": "Family-owned bakery serving fresh bread and pastries since 1985."
+    },
+    {
+        "name": "Tech Solutions Inc.",
+        "address": "Tema West",
+        "phone": "(555) 234-5678",
+        "websiteURL": "https:m",
+        "imageFileName": "meta.webp",
+        "membershipLevel": 3,
+        "description": "Complete IT services for businesses of all sizes."
+    },
+    {
+        "name": "Engineer Consulting Group",
+        "address": "Tema West",
+        "phone": "(555) 345-6789",
+        "websiteURL": "https",
+        "imageFileName": "engineer.jpg",
+        "membershipLevel": 2,
+        "description": "Professional engineering services."
+    },
+    {
+        "name": "Main Street Pharmacy",
+        "address": "Tema West",
+        "phone": "(555) 456-7890",
+        "websiteURL": "https",
+        "imageFileName": "text.jpg",
+        "membershipLevel": 2,
+        "description": "Full-service pharmacy with delivery options."
+    },
+    {
+        "name": "Data Analytics Group",
+        "address": "Tema West",
+        "phone": "(555) 567-8901",
+        "websiteURL": "https:",
+        "imageFileName": "data.jpg",
+        "membershipLevel": 3,
+        "description": "Leading provider of data analytics solutions for businesses."
+    },
+    {
+        "name": "Book Nook",
+        "address": "Tema West",
+        "phone": "(555) 678-9012",
+        "websiteURL": "https://booknook.com",
+        "imageFileName": "book.jpg",
+        "membershipLevel": 1,
+        "description": "Independent bookstore with new and used titles."
+    },
+    {
+        "name": "International Travel Agency",
+        "address": "Tema West",
+        "phone": "(555) 789-0123",
+        "websiteURL": "https",
+        "imageFileName": "driver.jpg",
+        "membershipLevel": 2,
+        "description": "Expert travel planning for global adventures."
+    },
+    {
+    "name": "Serenity Sync Incorporated",
+        "address": "Tema West",
+        "phone": "(555) 789-0123",
+        "websiteURL": "https://cavedevv.io/Vartsy-Website",
+        "imageFileName": "serenity.jpg",
+        "membershipLevel": 3,
+        "description": "Church and community event management software."
+    },
+    {
+        "name": "Auto Mechanics Co.",
+        "address": "Tema West",
+        "phone": "(555) 123-4567",
+        "websiteURL": "https",
+        "imageFileName": "mechan.avif",
+        "membershipLevel": 3,
+        "description": "AutoMobiles repair and maintenance services."
+    },
+    {
+        "name": "Tech Solutions Inc.",
+        "address": "Tema West",
+        "phone": "(555) 234-5678",
+        "websiteURL": "https",
+        "imageFileName": "meta.webp",
+        "membershipLevel": 3,
+        "description": "Complete IT services for businesses of all sizes."
+    },
+    {
+        "name": "Engineer Consulting Group",
+        "address": "Tema West",
+        "phone": "(555) 345-6789",
+        "websiteURL": "https",
+        "imageFileName": "engineer.jpg",
+        "membershipLevel": 2,
+        "description": "Professional engineering services."
+    },
+    {
+        "name": "Ashaiman Pharmacy",
+        "address": "Ashaiman main Station",
+        "phone": "(555) 456-7890",
+        "websiteURL": "https",
+        "imageFileName": "text.jpg",
+        "membershipLevel": 2,
+        "description": "Full-service pharmacy with delivery options."
+    },
+    {
+        "name": "Data Analytics Group",
+        "address": "Tema West",
+        "phone": "(555) 567-8901",
+        "websiteURL": "https",
+        "imageFileName": "data.jpg",
+        "membershipLevel": 3,
+        "description": "Leading provider of data analytics solutions for businesses."
+    },
+    {
+        "name": "Book Nook",
+        "address": "987 Literary Way, Your City, ST 12345",
+        "phone": "(555) 678-9012",
+        "websiteURL": "https://booknook.com",
+        "imageFileName": "book.jpg",
+        "membershipLevel": 1,
+        "description": "Independent bookstore with new and used titles."
+    },
+    {
+    "name": "International Travel Agency",
+        "address": "135 Fitness Road, Your City, ST 12345",
+        "phone": "(555) 789-0123",
+        "websiteURL": "https",
+        "imageFileName": "driver.jpg",
+        "membershipLevel": 2,
+        "description": "Expert travel planning for global adventures."
+    },
+    {
+    "name": "Vartsy Systems",
+        "address": "135 Fitness Road, Your City, ST 12345",
+        "phone": "(555) 789-0123",
+        "websiteURL": "https://cavvedev.io/Vartsy-Website",
+        "imageFileName": "vfic.jpg",
+        "membershipLevel": 3,
+        "description": "Expert travel planning for global adventures."
+    }
+]
