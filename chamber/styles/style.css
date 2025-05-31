@@ -297,4 +297,24 @@ footer {
     .grid-view {
         grid-template-columns: 1fr;
     }
+
+    .member-image{
+        width: 200px;
+        padding-left: 100px;
+    }
+    .member-info{
+        text-align: center;
+    }
+    .view-options,.logo-container h1{
+        display: none;
+    }
+    .header-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .logo-container img{
+        width: 40px;
+    }
+    
 }
