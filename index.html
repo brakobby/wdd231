@@ -3,56 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>week1</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <meta name="description" content="Course home page for WDD 231 - Web Frontend Development">
+    <meta name="author" content="Samuel Kwabena Nyonator">
+    <title>WDD 231 - Course Home Page</title>
+    <link rel="stylesheet" href="/styles/larger.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="/styles/small.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/scripts/navigation.js" defer></script>
+    <script src="/scripts/date.js" defer></script>
+    <script src="/scripts/course.js" defer></script>
 </head>
 <body>
     <header>
-        <span class="name"><img class="logo" src="/images/logo.png" alt="">MR. SAMUEL</span>        
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="index.html">Chamber</a>
-            <a href="index.html">Final</a>
-            <a href="index.html">Github Profile</a>
-            <a href="index.html">LinkedIn</a>
+        <div class="header-content">
+            <img class="logo" src="/images/logo.png" alt="Course logo" width="50" height="50">
+            <h1>Samuel Kwabena Nyonator</h1>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">Final</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
         </nav>
     </header>
+    
     <main>
-        <h1>HOME</h1>
-        <div class="main-div">
-            <section class="work">
-                <h2>Course Work</h2>
-            </section>
-            <section class="location">
-                <h2>Accra - Ghana</h2>
-                <img src="/images/hero.jpg" alt="hero">
-            </section>
-        </div>
-        <section class="courses">
-            <h2>Web and Computer Programming Certificate</h2>
-            <hr>
-            <div class="course-nav-btn">
-                <button>ALL</button>
-                <button>CSE</button>
-                <button>WDD</button>
-            </div>
-            <hr>
+        <section class="hero">
+            <h2>Welcome to WDD 231</h2>
+            <picture>
+                <source media="(max-width: 600px)" srcset="/images/hero-small.jpg">
+                <img src="/images/hero.jpg" alt="Accra, Ghana skyline" width="1200" height="400">
+            </picture>
         </section>
         
+        <section class="info-cards">
+            <div class="card">
+                <h3>About Me</h3>
+                <p>Web developer from Accra, Ghana specializing in frontend development.</p>
+            </div>
+            <div class="card">
+                <h3>Course Information</h3>
+                <p>Web Frontend Development II - Building on fundamental web development skills.</p>
+            </div>
+        </section>
+        
+        <section class="courses">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All Courses</button>
+                <button class="filter-btn" data-filter="WDD">WDD Courses</button>
+                <button class="filter-btn" data-filter="CSE">CSE Courses</button>
+            </div>
+            <div class="courses-container"></div>
+            <div class="credits-display">Total Credits: <span id="total-credits">0</span></div>
+        </section>
     </main>
-    <footer>
-        <p>
-            <span id="current_year"></span>
-            Samuel Kwabena Nyonator
-            Ghana
-        </p>
-        <p>
-            <span id="last_modified"></span>
-        </p>
-    </footer>
     
+    <footer>
+        <p>&copy; <span id="current-year"></span> | Samuel Kwabena Nyonator | Accra, Ghana</p>
+        <p id="last-modified"></p>
+    </footer>
 </body>
 </html>
