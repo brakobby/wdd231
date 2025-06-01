@@ -118,7 +118,7 @@
     },
     {
         "name": "Book Nook",
-        "address": "987 Literary Way, Your City, ST 12345",
+        "address": "Tema West",
         "phone": "(555) 678-9012",
         "websiteURL": "https://booknook.com",
         "imageFileName": "book.jpg",
@@ -127,7 +127,7 @@
     },
     {
     "name": "International Travel Agency",
-        "address": "135 Fitness Road, Your City, ST 12345",
+        "address": "Tema Obuasi",
         "phone": "(555) 789-0123",
         "websiteURL": "https",
         "imageFileName": "driver.jpg",
@@ -136,7 +136,7 @@
     },
     {
     "name": "Vartsy Systems",
-        "address": "135 Fitness Road, Your City, ST 12345",
+        "address": "Tema Obuasi",
         "phone": "(555) 789-0123",
         "websiteURL": "https://cavvedev.io/Vartsy-Website",
         "imageFileName": "vfic.jpg",
