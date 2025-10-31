@@ -61,41 +61,39 @@ const courses = [
     }
 ];
 
+const container = document.querySelector('.courses-grid');
+
 function renderCourses(filter = 'all') {
-    const container = document.querySelector('.courses-container');
-    const filteredCourses = filter === 'all' 
-        ? courses 
-        : courses.filter(course => course.subject === filter);
-    
-    container.innerHTML = '';
-    
-    let totalCredits = 0;
-    
-    filteredCourses.forEach(course => {
-        const card = document.createElement('div');
-        card.className = `course-card ${course.completed ? 'completed' : ''}`;
-        card.innerHTML = `
-            <h3>${course.subject} ${course.number}: ${course.title}</h3>
-            <p><strong>Credits:</strong> ${course.credits}</p>
-            <p>${course.description}</p>
-            <p><strong>Technologies:</strong> ${course.technology.join(', ')}</p>
-            ${course.completed ? '<p class="completed-badge">✓ Completed</p>' : ''}
-        `;
-        container.appendChild(card);
-        totalCredits += course.credits;
-    });
-    
-    document.getElementById('total-credits').textContent = totalCredits;
+  const filtered = filter === 'all' ? courses : courses.filter(c => c.subject === filter);
+  container.innerHTML = '';
+  let total = 0;
+
+  filtered.forEach((course, i) => {
+    const card = document.createElement('div');
+    card.className = `course-card ${course.completed ? 'completed' : ''}`;
+    card.style.animationDelay = `${0.1 + i * 0.05}s`;
+    card.innerHTML = `
+      <h3>${course.subject} ${course.number}: ${course.title}</h3>
+      <p><strong>Credits:</strong> ${course.credits}</p>
+      <p>${course.description}</p>
+      <p><strong>Tech:</strong> ${course.technology.join(', ')}</p>
+      ${course.completed ? '<p class="completed-badge">Completed</p>' : ''}
+    `;
+    container.appendChild(card);
+    total += course.credits;
+  });
+
+  document.getElementById('total-credits').textContent = total;
 }
 
-// Set up filter buttons
-document.querySelectorAll('.filter-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        renderCourses(button.dataset.filter);
-    });
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderCourses(btn.dataset.filter);
+  });
 });
 
-// Initial render
+// Init
 renderCourses();
