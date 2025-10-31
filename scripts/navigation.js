@@ -1,16 +1,8 @@
-// Responsive navigation
-const menuToggle = document.querySelector('.menu-toggle');
-const navigation = document.querySelector('.navigation');
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+  const nav = document.querySelector('.nav');
+  const btn = document.querySelector('.menu-toggle');
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
 
-menuToggle.addEventListener('click', () => {
-    navigation.classList.toggle('active');
-});
-
-// Close menu when clicking on a link
-document.querySelectorAll('.navigation a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-            navigation.classList.remove('active');
-        }
-    });
+  nav.classList.toggle('active');
+  btn.setAttribute('aria-expanded', !expanded);
 });

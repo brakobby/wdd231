@@ -1,75 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Course home page for WDD 231 - Web Frontend Development">
-    <meta name="author" content="Samuel Kwabena Nyonator">
-    <title>WDD 231 - Course Home Page</title>
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 768px)">
-    
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <script src="scripts/navigation.js" defer></script>
-    <script src="scripts/date.js" defer></script>
-    <script src="scripts/course.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WDD 231 - Web Frontend Development II | Samuel Kwabena Nyonator" />
+  <meta name="author" content="Samuel Kwabena Nyonator" />
+  <title>WDD 231 | Samuel Kwabena Nyonator</title>
+
+  <!-- Preload Critical Images -->
+  <link rel="preload" href="images/hero.jpg" as="image" />
+  <link rel="preload" href="images/hero-small.jpg" as="image" media="(max-width: 600px)" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/larger.css" media="(min-width: 768px)" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono&display=swap" rel="stylesheet" />
+
+  <!-- Scripts -->
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/course.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <img class="logo" src="images/logo.png" alt="Course logo" width="50" height="50">
-            <h1>Samuel Kwabena Nyonator</h1>
-        </div>
-        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-        <nav class="navigation">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">Final</a></li>
-                <li><a href="https://github.com/brakobby">GitHub Profile</a></li>
-                <li><a href="https://www.linkedin.com/in/samuel-kwabena-nyonator/‬">LinkedIn</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section class="hero">
-            <h2>Welcome to WDD 231</h2>
-            <picture>
-                <source media="(max-width: 600px)" srcset="/images/hero-small.jpg">
-                <img src="images/hero.jpg" alt="Accra, Ghana skyline" width="1200" height="400">
-            </picture>
-        </section>
-        
-        <section class="info-cards">
-            <div class="card">
-                <h3>About Me</h3>
-                <p>Web developer from Accra, Ghana specializing in frontend development.</p>
-            </div>
-            <div class="card">
-                <h3>Course Information</h3>
-                <p>Web Frontend Development II - Building on fundamental web development skills.</p>
-            </div>
-        </section>
-        
-        <section class="courses">
-            <h2>Web and Computer Programming Certificate</h2>
-            <div class="filter-controls">
-                <button class="filter-btn active" data-filter="all">All Courses</button>
-                <button class="filter-btn" data-filter="WDD">WDD Courses</button>
-                <button class="filter-btn" data-filter="CSE">CSE Courses</button>
-            </div>
-            <div class="courses-container"></div>
-            <div class="credits-display">Total Credits: <span id="total-credits">0</span></div>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; <span id="current-year"></span> | Samuel Kwabena Nyonator | Accra, Ghana</p>
-        <p id="last-modified"></p>
-    </footer>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-content">
+      <img src="images/logo.png" alt="WDD 231 Logo" class="logo" width="50" height="50" loading="lazy" />
+      <h1>Samuel Kwabena Nyonator</h1>
+    </div>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
+    <nav class="nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="#" class="active" aria-current="page">Home</a></li>
+        <li><a href="#">Chamber</a></li>
+        <li><a href="#">Final</a></li>
+        <li><a href="https://github.com/brakobby" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/samuel-kwabena-nyonator/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- HERO -->
+    <section class="hero fade-in">
+      <h2 class="hero-title">Welcome to WDD 231</h2>
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/hero-small.jpg" />
+        <img src="images/hero.jpg" alt="Accra, Ghana skyline at sunset" loading="lazy" />
+      </picture>
+    </section>
+
+    <!-- INFO CARDS -->
+    <section class="info-cards">
+      <article class="card slide-up" style="--delay: 0.1s">
+        <h3>About Me</h3>
+        <p>Frontend developer from Accra, Ghana. Passionate about clean code, accessibility, and performance.</p>
+      </article>
+      <article class="card slide-up" style="--delay: 0.2s">
+        <h3>Course</h3>
+        <p>Web Frontend Development II — mastering modern JavaScript, responsive design, and UX principles.</p>
+      </article>
+    </section>
+
+    <!-- COURSES -->
+    <section class="courses fade-in" style="--delay: 0.3s">
+      <h2>Web & Computer Programming Certificate</h2>
+
+      <div class="filter-controls">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="WDD">WDD</button>
+        <button class="filter-btn" data-filter="CSE">CSE</button>
+      </div>
+
+      <div class="courses-grid"></div>
+
+      <div class="credits-display">
+        Total Credits: <strong id="total-credits">0</strong>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="current-year"></span> Samuel Kwabena Nyonator | Accra, Ghana</p>
+    <p id="last-modified">Last modified: <span></span></p>
+  </footer>
 </body>
 </html>
