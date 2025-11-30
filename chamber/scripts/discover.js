@@ -4,6 +4,15 @@ const grid = document.getElementById('places-grid');
 const messageEl = document.getElementById('message-text');
 const visitMsg = document.getElementById('visit-message');
 const closeBtn = document.getElementById('close-message');
+const menuToggle = document.getElementById('menu-toggle');
+
+const nav = document.getElementById('primary-nav');
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !expanded);
+});
+
 
 function renderPlaces() {
     grid.innerHTML = places.map(place => `

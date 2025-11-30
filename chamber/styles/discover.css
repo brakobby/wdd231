@@ -2,7 +2,7 @@
 .discover-hero {
     padding: 7rem 1rem 4rem;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/accra-skyline.webp') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/chamber/images/skyline.webp') center/cover no-repeat;
     color: white;
     margin-top: 80px;
 }

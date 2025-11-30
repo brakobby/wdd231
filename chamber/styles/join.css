@@ -1,15 +1,41 @@
-/* JOIN PAGE – Beautiful & Responsive */
-.join-main { max-width: 1400px; margin: 0 auto; padding: 2rem 1rem; }
+/* ========================================================= */
+/* JOIN PAGE – FINAL, BULLETPROOF & BEAUTIFUL VERSION         */
+/* Works perfectly on mobile, tablet & desktop               */
+/* ========================================================= */
+
+:root {
+    --primary: #2A5D9F;
+    --gold: #F4A300;
+    --radius: 16px;
+    --shadow-sm: 0 4px 15px rgba(42,93,159,0.12);
+    --shadow-md: 0 10px 35px rgba(42,93,159,0.18);
+    --transition: all 0.35s ease;
+}
+
+.join-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Hero Section */
 .join-hero {
     text-align: center;
-    padding: 5rem 1rem 3rem;
-    background: linear-gradient(to bottom, var(--primary), #1e4a85);
+    padding: 6rem 1rem 4rem;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/chamber/images/join.jpeg') center/cover no-repeat;
     color: white;
-    margin-top: 80px;
+    margin-top: 80px; 
 }
-.join-hero h1 { font-size: clamp(2.5rem, 7vw, 4rem); margin-bottom: 0.5rem; }
-.join-hero p { font-size: 1.3rem; opacity: 0.95; }
+.join-hero h1 { 
+    font-size: clamp(2.8rem, 8vw, 4.5rem); 
+    margin-bottom: 0.5rem;
+}
+.join-hero p { 
+    font-size: 1.35rem; 
+    opacity: 0.95;
+}
 
+/* Two-column layout (form + cards) */
 .join-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -17,20 +43,31 @@
     margin-top: 2rem;
 }
 @media (min-width: 992px) {
-    .join-container { grid-template-columns: 1fr 380px; }
+    .join-container { 
+        grid-template-columns: 1fr 380px; 
+    }
 }
 
-.application-form h2, .membership-levels h2 {
+/* Section Titles */
+.application-form h2,
+.membership-levels h2 {
     text-align: center;
     color: var(--primary);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     position: relative;
 }
-.application-form h2::after, .membership-levels h2::after {
-    content: ''; width: 80px; height: 4px; background: var(--gold);
-    display: block; margin: 1rem auto; border-radius: 2px;
+.application-form h2::after,
+.membership-levels h2::after {
+    content: '';
+    width: 90px;
+    height: 5px;
+    background: var(--gold);
+    display: block;
+    margin: 1rem auto;
+    border-radius: 3px;
 }
 
+/* Form Styling */
 .application-form form {
     background: white;
     padding: 2.5rem;
@@ -48,12 +85,13 @@
     color: #333;
 }
 .required { color: #e74c3c; }
+
 .application-form input,
 .application-form select,
 .application-form textarea {
     width: 100%;
     padding: 0.9rem 1.2rem;
-    border: 2px solid #ddd;
+    border: 2px solid #e0e0e0;
     border-radius: 12px;
     font-size: 1rem;
     transition: var(--transition);
@@ -65,6 +103,7 @@
     border-color: var(--primary);
     box-shadow: 0 0 0 4px rgba(42,93,159,0.15);
 }
+
 .submit-btn {
     background: var(--gold);
     color: #111;
@@ -84,11 +123,11 @@
     box-shadow: 0 15px 35px rgba(244,163,0,0.5);
 }
 
-/* Membership Cards */
+/* Membership Level Cards (right column / below on mobile) */
 .membership-levels {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.8rem;
 }
 .level-card {
     background: white;
@@ -107,17 +146,31 @@
 .level-card:nth-child(3) { animation-delay: 0.6s; }
 .level-card:nth-child(4) { animation-delay: 0.8s; }
 
-.level-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-md); }
-.level-card h3 { color: var(--primary); margin-bottom: 0.5rem; }
-.level-card .price { font-size: 1.8rem; font-weight: 700; color: var(--gold); }
+.level-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-md);
+}
+.level-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+.level-card .price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--gold);
+    margin: 0.5rem 0;
+}
 .level-card.np .price { color: #27ae60; }
+
 .info-btn {
     margin-top: 1rem;
     background: transparent;
     border: 2px solid var(--primary);
     color: var(--primary);
-    padding: 0.7rem 1.5rem;
+    padding: 0.7rem 1.8rem;
     border-radius: 50px;
+    font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
 }
@@ -126,43 +179,70 @@
     color: white;
 }
 
-/* Modals */
+/* MODALS – Fixed & Beautiful */
 .modal {
-    display: none;
+    display: none;                     /* hidden by default */
     position: fixed;
     z-index: 2000;
     left: 0; top: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(5px);
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(8px);
     align-items: center;
     justify-content: center;
     padding: 1rem;
+    overflow-y: auto;
 }
-.modal.show { display: flex; }
+.modal.show { 
+    display: flex !important;         /* forces show when JS adds .show */
+}
 .modal-content {
     background: white;
     padding: 2.5rem;
     border-radius: var(--radius);
-    max-width: 500px;
+    max-width: 520px;
+    width: 100%;
     position: relative;
-    animation: modalPop 0.4s ease-out;
+    animation: modalPop 0.45s ease-out;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
 .close {
     position: absolute;
-    top: 1rem; right: 1.5rem;
-    font-size: 2rem;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #999;
     cursor: pointer;
-    color: #aaa;
+    transition: color 0.3s;
 }
 .close:hover { color: #000; }
-.modal h3 { color: var(--primary); margin-bottom: 1.5rem; text-align: center; }
-.modal ul { padding-left: 1.5rem; }
-.modal li { margin: 0.8rem 0; font-size: 1.05rem; }
 
+.modal h3 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.6rem;
+}
+.modal ul {
+    padding-left: 1.5rem;
+    line-height: 1.8;
+}
+.modal li {
+    margin: 0.8rem 0;
+    font-size: 1.05rem;
+}
+
+/* Animations */
 @keyframes fadeUpCard {
     to { opacity: 1; transform: translateY(0); }
 }
 @keyframes modalPop {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    from { transform: scale(0.85); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
+
+/* Small tweak for very small screens */
+@media (max-width: 480px) {
+    .join-hero { padding: 5rem 1rem 3rem; }
+    .application-form form { padding: 2rem; }
 }
