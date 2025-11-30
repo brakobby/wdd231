@@ -1,146 +1,101 @@
 [
-    {
-        "name": "Sunrise Bakery",
-        "address": "Tema West",
-        "phone": "(555) 123-4567",
-        "websiteURL": "https",
-        "imageFileName": "farmer.avif",
-        "membershipLevel": 3,
-        "description": "Family-owned bakery serving fresh bread and pastries since 1985."
-    },
-    {
-        "name": "Tech Solutions Inc.",
-        "address": "Tema West",
-        "phone": "(555) 234-5678",
-        "websiteURL": "https:m",
-        "imageFileName": "meta.webp",
-        "membershipLevel": 3,
-        "description": "Complete IT services for businesses of all sizes."
-    },
-    {
-        "name": "Engineer Consulting Group",
-        "address": "Tema West",
-        "phone": "(555) 345-6789",
-        "websiteURL": "https",
-        "imageFileName": "engineer.jpg",
-        "membershipLevel": 2,
-        "description": "Professional engineering services."
-    },
-    {
-        "name": "Main Street Pharmacy",
-        "address": "Tema West",
-        "phone": "(555) 456-7890",
-        "websiteURL": "https",
-        "imageFileName": "text.jpg",
-        "membershipLevel": 2,
-        "description": "Full-service pharmacy with delivery options."
-    },
-    {
-        "name": "Data Analytics Group",
-        "address": "Tema West",
-        "phone": "(555) 567-8901",
-        "websiteURL": "https:",
-        "imageFileName": "data.jpg",
-        "membershipLevel": 3,
-        "description": "Leading provider of data analytics solutions for businesses."
-    },
-    {
-        "name": "Book Nook",
-        "address": "Tema West",
-        "phone": "(555) 678-9012",
-        "websiteURL": "https://booknook.com",
-        "imageFileName": "book.jpg",
-        "membershipLevel": 1,
-        "description": "Independent bookstore with new and used titles."
-    },
-    {
-        "name": "International Travel Agency",
-        "address": "Tema West",
-        "phone": "(555) 789-0123",
-        "websiteURL": "https",
-        "imageFileName": "driver.jpg",
-        "membershipLevel": 2,
-        "description": "Expert travel planning for global adventures."
-    },
-    {
-    "name": "Serenity Sync Incorporated",
-        "address": "Tema West",
-        "phone": "(555) 789-0123",
-        "websiteURL": "https://cavedevv.io/Vartsy-Website",
-        "imageFileName": "serenity.jpg",
-        "membershipLevel": 3,
-        "description": "Church and community event management software."
-    },
-    {
-        "name": "Auto Mechanics Co.",
-        "address": "Tema West",
-        "phone": "(555) 123-4567",
-        "websiteURL": "https",
-        "imageFileName": "mechan.avif",
-        "membershipLevel": 3,
-        "description": "AutoMobiles repair and maintenance services."
-    },
-    {
-        "name": "Tech Solutions Inc.",
-        "address": "Tema West",
-        "phone": "(555) 234-5678",
-        "websiteURL": "https",
-        "imageFileName": "meta.webp",
-        "membershipLevel": 3,
-        "description": "Complete IT services for businesses of all sizes."
-    },
-    {
-        "name": "Engineer Consulting Group",
-        "address": "Tema West",
-        "phone": "(555) 345-6789",
-        "websiteURL": "https",
-        "imageFileName": "engineer.jpg",
-        "membershipLevel": 2,
-        "description": "Professional engineering services."
-    },
-    {
-        "name": "Ashaiman Pharmacy",
-        "address": "Ashaiman main Station",
-        "phone": "(555) 456-7890",
-        "websiteURL": "https",
-        "imageFileName": "text.jpg",
-        "membershipLevel": 2,
-        "description": "Full-service pharmacy with delivery options."
-    },
-    {
-        "name": "Data Analytics Group",
-        "address": "Tema West",
-        "phone": "(555) 567-8901",
-        "websiteURL": "https",
-        "imageFileName": "data.jpg",
-        "membershipLevel": 3,
-        "description": "Leading provider of data analytics solutions for businesses."
-    },
-    {
-        "name": "Book Nook",
-        "address": "Tema West",
-        "phone": "(555) 678-9012",
-        "websiteURL": "https://booknook.com",
-        "imageFileName": "book.jpg",
-        "membershipLevel": 1,
-        "description": "Independent bookstore with new and used titles."
-    },
-    {
+  {
+    "name": "Sunrise Bakery",
+    "address": "Community 2, Tema West",
+    "phone": "+233 55 5123 4567",
+    "websiteURL": "https://sunrisebakery-gh.com",
+    "imageFileName": "images/farmer.avif",
+    "membershipLevel": 3,
+    "description": "Family-owned bakery serving fresh bread, cakes, and pastries since 1985."
+  },
+  {
+    "name": "Tech Solutions Inc.",
+    "address": "Harbour Road, Tema",
+    "phone": "+233 50 2234 5678",
+    "websiteURL": "https://techsolutionsgh.com",
+    "imageFileName": "images/meta.webp",
+    "membershipLevel": 3,
+    "description": "Complete IT services, cloud solutions, and cybersecurity for businesses."
+  },
+  {
+    "name": "Engineer Consulting Group",
+    "address": "Industrial Area, Tema",
+    "phone": "+233 54 3345 6789",
+    "websiteURL": "https://ecg-tema.com",
+    "imageFileName": "images/engineer.jpg",
+    "membershipLevel": 2,
+    "description": "Professional civil and structural engineering consultancy services."
+  },
+  {
+    "name": "Main Street Pharmacy",
+    "address": "Tema Community 1",
+    "phone": "+233 24 4456 7890",
+    "websiteURL": "https://mainstreetpharmacy.com",
+    "imageFileName": "images/text.jpg",
+    "membershipLevel": 2,
+    "description": "Full-service pharmacy with 24/7 delivery and health consultations."
+  },
+  {
+    "name": "Data Analytics Group",
+    "address": "Sakumono Junction, Tema",
+    "phone": "+233 20 5567 8901",
+    "websiteURL": "https://dataanalyticsgh.com",
+    "imageFileName": "images/data.jpg",
+    "membershipLevel": 3,
+    "description": "Leading provider of business intelligence and data analytics solutions."
+  },
+  {
+    "name": "Book Nook Ghana",
+    "address": "Tema Community 8",
+    "phone": "+233 26 6678 9012",
+    "websiteURL": "https://booknook.com.gh",
+    "imageFileName": "images/book.jpg",
+    "membershipLevel": 1,
+    "description": "Independent bookstore offering new, used, and African literature."
+  },
+  {
     "name": "International Travel Agency",
-        "address": "Tema Obuasi",
-        "phone": "(555) 789-0123",
-        "websiteURL": "https",
-        "imageFileName": "driver.jpg",
-        "membershipLevel": 2,
-        "description": "Expert travel planning for global adventures."
-    },
-    {
+    "address": "Tema Obuasi",
+    "phone": "+233 24 7789 0123",
+    "websiteURL": "https://intltravelgh.com",
+    "imageFileName": "images/driver.jpg",
+    "membershipLevel": 2,
+    "description": "Expert visa processing and global travel planning services."
+  },
+  {
+    "name": "Serenity Sync Incorporated",
+    "address": "Ashaiman Newtown",
+    "phone": "+233 55 5123 9999",
+    "websiteURL": "https://cavedevv.io/Vartsy-Website",
+    "imageFileName": "images/serenity.jpg",
+    "membershipLevel": 3,
+    "description": "Church management software, event planning, and community engagement tools."
+  },
+  {
+    "name": "Auto Mechanics Co.",
+    "address": "Tema Industrial Area",
+    "phone": "+233 50 2123 4567",
+    "websiteURL": "https://automechanicsco.com",
+    "imageFileName": "images/mechan.avif",
+    "membershipLevel": 3,
+    "description": "Professional automobile repair, diagnostics, and maintenance services."
+  },
+  {
+    "name": "Ashaiman Pharmacy",
+    "address": "Ashaiman Main Station",
+    "phone": "+233 24 4456 1111",
+    "websiteURL": "https://ashaimanpharmacy.com",
+    "imageFileName": "images/text.jpg",
+    "membershipLevel": 2,
+    "description": "Trusted community pharmacy with affordable medicines and health advice."
+  },
+  {
     "name": "Vartsy Systems",
-        "address": "Tema Obuasi",
-        "phone": "(555) 789-0123",
-        "websiteURL": "https://cavvedev.io/Vartsy-Website",
-        "imageFileName": "vfic.jpg",
-        "membershipLevel": 3,
-        "description": "Expert travel planning for global adventures."
-    }
+    "address": "Tema Obuasi, Greater Accra",
+    "phone": "+233 55 789 0123",
+    "websiteURL": "https://vartsy.systems",
+    "imageFileName": "images/vfic.jpg",
+    "membershipLevel": 3,
+    "description": "Innovative software solutions for churches, schools, and businesses in Ghana."
+  }
 ]

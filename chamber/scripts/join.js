@@ -1,8 +1,7 @@
 
-// Set timestamp on load
+
 document.getElementById('timestamp').value = new Date().toISOString();
 
-// Mobile menu toggle (reuse from your site)
 const menuToggle = document.getElementById('menu-toggle');
 const nav = document.getElementById('primary-nav');
 menuToggle.addEventListener('click', () => {
@@ -25,7 +24,6 @@ document.querySelectorAll('.close').forEach(close => {
     });
 });
 
-// Close modal when clicking outside
 window.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal')) {
         e.target.classList.remove('show');
