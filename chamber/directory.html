@@ -3,83 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chamber of Commerce directory page for [Your City/Region]">
-    <meta name="author" content="Your Name">
-    
-    <!-- Facebook Meta Tags -->
-    <meta property="og:title" content="[Your City] Chamber of Commerce">
-    <meta property="og:description" content="Discover local businesses in [Your City] through our Chamber of Commerce directory">
-    <meta property="og:image" content="https://your-github-username.github.io/wdd231/chamber/images/logo.png">
-    <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html">
-    
-    <title>Chamber of Commerce | Directory</title>
-    <link rel="icon" href="images/logo.png" type="images/logo.png">
-    
-    <!-- CSS -->
+    <title>Accra Chamber of Commerce | Business Directory</title>
+    <meta name="description" content="Official directory of Accra Chamber of Commerce members – connecting businesses in Ghana's capital.">
+    <meta name="author" content="Your Full Name">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Accra Chamber of Commerce Directory">
+    <meta property="og:description" content="Discover trusted businesses in Accra, Ghana. Join our growing network today!">
+    <meta property="og:image" content="https://brakobby.github.io/wdd231/chamber/images/directory-og.jpg">
+    <meta property="og:url" content="https://brakobby.github.io/wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/directory.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo-container">
-                <img src="images/logo.png" alt="Logo">
-                <h1>Chamber of Commerce</h1>
+                <img src="images/logo.png" alt="Accra Chamber Logo" width="60">
+                <h1>Accra Chamber of Commerce</h1>
             </div>
-            
             <nav>
-                <button id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+                <button id="menu-toggle" aria-label="Toggle menu">Menu</button>
                 <ul id="primary-nav">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#" class="active">Directory</a></li>
+                    <li><a href="directory.html" class="active">Directory</a></li>
                     <li><a href="discover.html">Discover</a></li>
                     <li><a href="join.html">Join</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <div class="main">
-             <h2>Member Directory</h2>
-        
-        <div class="view-options">
-            <button id="grid-view" class="active" aria-pressed="true">Grid View</button>
-            <button id="list-view" aria-pressed="false">List View</button>
-        </div>
-        
-        <div id="members-display" class="grid-view">
-            <!-- Members will be loaded here by JavaScript -->
+        <section class="directory-hero">
+            <h1>Member Directory</h1>
+            <p>Connect with trusted businesses in Accra</p>
+        </section>
+
+        <div class="directory-controls">
+            <div class="view-toggle">
+                <button id="grid-view" class="active">Grid</button>
+                <button id="list-view">List</button>
+            </div>
+            <p class="member-count">Loading members...</p>
         </div>
 
+        <section class="members-container" id="members-grid">
+        </section>
     </main>
-       
 
     <footer>
         <div class="footer-content">
             <div class="contact-info">
                 <h3>Contact Information</h3>
-                <p>Aburi Chamber of Commerce</p>
-                <p>123 Commerce Street</p>
-
-                <p>Phone: (555) 123-4567</p>
-                <p>Email: snyonator@byupathway.edu</p>
+                <p>Accra Chamber of Commerce</p>
+                <p>123 Commerce Street, Accra, Ghana</p>
+                <p>Phone: (+233) 555 123 456</p>
+                <p>Email: info@accrachamber.org</p>
             </div>
-            
             <div class="development-info">
-                <p>&copy; <span id="copyright-year"></span> Aburi Chamber of Commerce</p>
-                <p>Nyontor Samuel Kwabena | WDD 231 Project</p>
+                <p>© <span id="copyright-year"></span> Accra Chamber of Commerce</p>
+                <p>Nyonator Samuel Kwabena | WDD 231 Project</p>
                 <p>Last Modified: <span id="last-modified"></span></p>
             </div>
         </div>
     </footer>
 
-    <script src="scripts/script.js"></script>
+    <script src="scripts/directory.js"></script>
 </body>
 </html>
