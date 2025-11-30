@@ -10,7 +10,6 @@ menuToggle.addEventListener('click', () => {
     menuToggle.setAttribute('aria-expanded', !expanded);
 });
 
-// Modal functionality
 document.querySelectorAll('.level-card').forEach(card => {
     card.addEventListener('click', () => {
         const modalId = card.getAttribute('data-modal');

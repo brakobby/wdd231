@@ -4,6 +4,14 @@ const gridBtn = document.getElementById('grid-view');
 const listBtn = document.getElementById('list-view');
 const countEl = document.querySelector('.member-count');
 
+const menuToggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('primary-nav');
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !expanded);
+});
+
 async function loadMembers() {
     try {
         const response = await fetch('data/members.json');

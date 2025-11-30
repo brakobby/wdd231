@@ -1,7 +1,7 @@
 .directory-hero {
     padding: 6rem 1rem 3rem;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/accra-business.jpg') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/chamber/images/business.png') center/cover;
     color: white;
     margin-top: 80px;
 }
