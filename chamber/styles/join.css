@@ -22,7 +22,7 @@
 .join-hero {
     text-align: center;
     padding: 6rem 1rem 4rem;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/chamber/images/join.jpeg') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/join.jpeg') center/cover no-repeat;
     color: white;
     margin-top: 80px; 
 }
