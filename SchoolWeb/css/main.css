@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --font-style-header:"Montserrat";
+    --font-style-body :"Open Sans";
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--font-style-body)
+}
+
+header{
+    font-family: "Montserrat";
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #ffffffc0;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 1%;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    position: fixed; /* Removed the redundant absolute */
+    z-index: 2;
+}
+
+header img{
+    width: 80px;
+    height: auto;
+    border-radius: 40px;
+} 
+
+header nav{
+    display: flex;
+    gap: 5%;
+}
+
+nav a{
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    padding: 17px;
+    transition: 0.8s;
+}
+
+nav a:hover{
+    background-color: #6c0d64;
+    border-radius: 10px;
+    color: white;
+}
+
+header button{
+    font-family: "Montserrat";
+    padding: 10px;
+    width: 200px;
+    font-size: 18px;
+    border: 1px solid #6c0d64;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #6c0d64;
+    transition: 0.8s ease;
+}
+
+header button:hover{
+    background-color: #6c0d64;
+    border: none;
+    color: white;
+}
+.schname{
+    font-size:3rem;
+    color: rgb(234, 232, 224);
+}
+.motto{
+    font-size: 1.5rem;
+}
+h1, h2{
+    font-family: var(--font-style-header);
+    
+}
+
+main .hero{
+    width: 100%;
+    position: relative;
+    height: 80%;
+    display: block;
+    object-fit: cover;
+}
+
+.active{
+    background: #6c0d64;
+    border-radius: 10px;
+    color: white;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 101vh;
+    background-color: rgba(6, 6, 6, 0.564); /* purple with transparency */
+    z-index: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    text-align: center;
+}
+
+.cont{
+    display: flex;
+}
+.cont button{
+    width: 200px;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    border: none;
+    font-weight: bold;
+}
+.explore{
+    background-color: transparent;
+    outline: 2px solid #e0b532;
+}
+
+.enroll{
+    background-color: #6c0d64;
+    outline: 1px solid white;
+    
+   
+}
+.features{text-align: center; font-size: 20px;font-weight: bold;background-color: #ddd; padding: 10px; padding-top: 30px;font-family: var(--font-style-header);}
+.feature-card{
+    display: flex;
+    justify-content: space-around;
+}
+.card{
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+.icon-wrapper {
+      font-size: 3.5rem;
+      margin-bottom: 24px;
+      color: #e0b532;
+    }
+
+.feature-title {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
+.feature-desc {
+      color: #555;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+footer{
+    background-color: #1b0119;
+    font-family: 'Montserrat';
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+.block{
+    display: flex;
+    justify-content: space-around;
+
+    align-items: center;
+}
+
+
+.links{
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.fabt{
+    padding: 0;
+    margin: 0;
+}
+.fabt img{
+    width: 100px;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Montserrat';
+    font-size: 18px;
+}
+.about-feature{
+    padding: 10px;
+    margin-top: 2%;
+}
+.about-feature h2{
+    text-align: center;
+    margin-bottom: 2%;
+}
+.abt-img img{
+    width: 50%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    margin-left: 2%;
+}

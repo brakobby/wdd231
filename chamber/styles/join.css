@@ -35,7 +35,6 @@
     opacity: 0.95;
 }
 
-/* Two-column layout (form + cards) */
 .join-container {
     display: grid;
     grid-template-columns: 1fr;
