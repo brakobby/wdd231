@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ============ WEATHER ============
-    const API_KEY = '2047c77f83e1c65fa6702ab89eee0b93'; // ← Your key (safe to keep public)
+    const API_KEY = '15174f9f7e834f594b46c7a3ca1765e9'; // ← Your key (safe to keep public)
     const CITY = 'Accra,GH';
 
     async function loadWeather() {

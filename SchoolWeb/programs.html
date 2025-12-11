@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs - Unique Assurance School Complex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Programs Page Specific Styles */
+        .programs-hero {
+            background: linear-gradient(rgba(224, 181, 50, 0.9), rgba(224, 181, 50, 0.8)), 
+                        url('images/programs-hero.jpg') center/cover no-repeat fixed;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            color: var(--dark-color);
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .programs-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/pattern.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .programs-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .programs-hero h1 {
+            color: var(--dark-color);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+        }
+
+        .programs-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--dark-color);
+        }
+
+        /* Programs Navigation */
+        .programs-nav {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .programs-nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .program-tab {
+            background: none;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .program-tab:hover,
+        .program-tab.active {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Programs Sections */
+        .programs-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .program-category {
+            margin-bottom: 100px;
+            scroll-margin-top: 150px;
+        }
+
+        .program-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .category-header h2 {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .category-header h2 i {
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+
+        .category-header::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            transform: translateY(-50%);
+        }
+
+        /* Program Cards - Sleek Design */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .program-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            z-index: 2;
+        }
+
+        .program-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .program-card:hover .program-image img {
+            transform: scale(1.1);
+        }
+
+        .program-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .program-card:hover .program-image::after {
+            opacity: 1;
+        }
+
+        .program-age {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 3;
+        }
+
+        .program-content {
+            padding: 30px;
+            position: relative;
+        }
+
+        .program-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .program-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        .program-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .program-features {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .program-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: padding-left 0.3s ease;
+        }
+
+        .program-features li:hover {
+            padding-left: 10px;
+            border-bottom-color: var(--secondary-color);
+        }
+
+        .program-features li:last-child {
+            border-bottom: none;
+        }
+
+        .program-features li i {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            min-width: 20px;
+        }
+
+        .program-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Curriculum Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-color), #8a1179);
+            color: white;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+            transition: transform 0.3s;
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 30px;
+            overflow-y: auto;
+            max-height: calc(90vh - 90px);
+        }
+
+        /* Facilities Section */
+        .facilities {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .facilities h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .facilities h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .facility-card {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        .facility-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .facility-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .facility-card i {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .facility-card:hover i {
+            transform: scale(1.2);
+        }
+
+        .facility-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .facility-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .faq-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 30px 30px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-color), #8a1179);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .btn-light:hover {
+            background: #f8f9fa;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .programs-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .programs-hero {
+                height: 50vh;
+            }
+            
+            .programs-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .programs-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .programs-nav-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .program-tab {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .program-actions {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .program-actions .btn {
+                width: 100%;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .programs-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-header h2 {
+                padding: 15px 25px;
+                font-size: 1.5rem;
+            }
+            
+            .facilities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Unique Assurance School Logo">
+                    <div class="logo-text">
+                        <h1>Unique Assurance</h1>
+                        <p>School Complex</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html" class="active">Programs</a></li>
+                    <li><a href="staff.html">Our Staff</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="programs-hero">
+        <div class="container">
+            <h1>Our Educational Programs</h1>
+            <p>Comprehensive education from early childhood to senior high school</p>
+        </div>
+    </section>
+
+    <!-- Programs Navigation -->
+    <section class="programs-nav">
+        <div class="container">
+            <div class="programs-nav-container">
+                <button class="program-tab active" data-target="early-childhood">
+                    <i class="fas fa-baby"></i> Early Childhood
+                </button>
+                <button class="program-tab" data-target="basic-school">
+                    <i class="fas fa-child"></i> Basic School
+                </button>
+                <button class="program-tab" data-target="senior-high">
+                    <i class="fas fa-user-graduate"></i> Senior High
+                </button>
+                <button class="program-tab" data-target="facilities">
+                    <i class="fas fa-building"></i> Facilities
+                </button>
+                <button class="program-tab" data-target="faq">
+                    <i class="fas fa-question-circle"></i> FAQ
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Sections -->
+    <section class="programs-section">
+        <div class="container">
+            <!-- Early Childhood -->
+            <div class="program-category" id="early-childhood">
+                <div class="category-header">
+                    <h2><i class="fas fa-baby"></i> Early Childhood Education</h2>
+                </div>
+                
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/creche.jpg" alt="Creche Program">
+                            <div class="program-age">6 months - 2 years</div>
+                        </div>
+                        <div class="program-content">
+                            <h3>Creche Program</h3>
+                            <p class="program-description">A safe, nurturing environment for our youngest learners with experienced caregivers and age-appropriate activities designed for optimal development.</p>
+                            
+                            <ul class="program-features">
+                                <li><i class="fas fa-shield-alt"></i> Safe, child-friendly environment</li>
+                                <li><i class="fas fa-utensils"></i> Nutritional meals provided</li>
+                                <li><i class="fas fa-brain"></i> Early stimulation activities</li>
+                                <li><i class="fas fa-heartbeat"></i> Regular health check-ups</li>
+                                <li><i class="fas fa-bed"></i> Nap time and rest periods</li>
+                                <li><i class="fas fa-users"></i> Small caregiver-to-child ratio</li>
+                            </ul>
+                            
+                            <div class="program-actions">
+                                <a href="contact.html?program=creche" class="btn">Enquire Now</a>
+                                <button class="btn btn-outline view-curriculum" data-program="creche">
+                                    <i class="fas fa-book-open"></i> Curriculum
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/nursery.jpg" alt="Nursery Program">
+                            <div class="program-age">2-4 years</div>
+                        </div>
+                        <div class="program-content">
+                            <h3>Nursery Program</h3>
+                            <p class="program-description">Developing foundational skills through play-based learning and social interaction, preparing children for the next educational journey.</p>
+                            
+                            <ul class="program-features">
+                                <li><i class="fas fa-gamepad"></i> Play-based curriculum</li>
+                                <li><i class="fas fa-handshake"></i> Social skills development</li>
+                                <li><i class="fas fa-book-reader"></i> Basic literacy & numeracy</li>
+                                <li><i class="fas fa-paint-brush"></i> Creative arts & music</li>
+                                <li><i class="fas fa-language"></i> Language development</li>
+                                <li><i class="fas fa-running"></i> Gross motor skills activities</li>
+                            </ul>
+                            
+                            <div class="program-actions">
+                                <a href="contact.html?program=nursery" class="btn">Enquire Now</a>
+                                <button class="btn btn-outline view-curriculum" data-program="nursery">
+                                    <i class="fas fa-book-open"></i> Curriculum
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic School -->
+            <div class="program-category" id="basic-school">
+                <div class="category-header">
+                    <h2><i class="fas fa-child"></i> Basic School Education</h2>
+                </div>
+                
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/primary.jpg" alt="Primary School">
+                            <div class="program-age">B1 - B6</div>
+                        </div>
+                        <div class="program-content">
+                            <h3>Primary School</h3>
+                            <p class="program-description">Building strong academic foundations with a balanced curriculum and extracurricular activities that foster holistic development.</p>
+                            
+                            <ul class="program-features">
+                                <li><i class="fas fa-book"></i> Ghana Education Service curriculum</li>
+                                <li><i class="fas fa-laptop"></i> ICT integration from Primary 4</li>
+                                <li><i class="fas fa-language"></i> French language classes</li>
+                                <li><i class="fas fa-futbol"></i> Sports & club activities</li>
+                                <li><i class="fas fa-music"></i> Music and cultural education</li>
+                                <li><i class="fas fa-chart-line"></i> Continuous assessment</li>
+                            </ul>
+                            
+                            <div class="program-actions">
+                                <a href="contact.html?program=primary" class="btn">Enquire Now</a>
+                                <button class="btn btn-outline view-curriculum" data-program="primary">
+                                    <i class="fas fa-book-open"></i> Curriculum
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/junior.jpg" alt="Junior High School">
+                            <div class="program-age">JHS 1-3</div>
+                        </div>
+                        <div class="program-content">
+                            <h3>Junior High School</h3>
+                            <p class="program-description">Preparing students for the Basic Education Certificate Examination (BECE) with comprehensive academic and career guidance.</p>
+                            
+                            <ul class="program-features">
+                                <li><i class="fas fa-graduation-cap"></i> Intensive BECE preparation</li>
+                                <li><i class="fas fa-flask"></i> Science & computer labs</li>
+                                <li><i class="fas fa-briefcase"></i> Career guidance</li>
+                                <li><i class="fas fa-flag"></i> Leadership training</li>
+                                <li><i class="fas fa-calendar-check"></i> Mock examinations</li>
+                                <li><i class="fas fa-project-diagram"></i> Project work supervision</li>
+                            </ul>
+                            
+                            <div class="program-actions">
+                                <a href="contact.html?program=jhs" class="btn">Enquire Now</a>
+                                <button class="btn btn-outline view-curriculum" data-program="jhs">
+                                    <i class="fas fa-book-open"></i> Curriculum
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Senior High School -->
+            <div class="program-category" id="senior-high">
+                <div class="category-header">
+                    <h2><i class="fas fa-user-graduate"></i> Senior High School</h2>
+                </div>
+                
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/science.jpg" alt="Science Program">
+                            <div class="program-age">General Science</div>
+                        </div>
+                        <div class="program-content">
+                            <h3>General Science</h3>
+                            <p class="program-description">For students aspiring to pursue careers in medicine, engineering, technology, and scientific research with comprehensive laboratory training.</p>
+                            
+                            <ul class="program-features">
+                                <li><i class="fas fa-atom"></i> Physics, Chemistry, Biology</li>
+                                <li><i class="fas fa-square-root-alt"></i> Elective Mathematics</li>
+                                <li><i class="fas fa-vial"></i> Well-equipped laboratories</li>
+                                <li><i class="fas fa-university"></i> University preparation</li>
+                                <li><i class="fas fa-microscope"></i> Practical experiments</li>
+                                <li><i class="fas fa-chart-bar"></i> Research projects</li>
+                            </ul>
+                            
+                            <div class="program-actions">
+                                <a href="contact.html?program=science" class="btn">Enquire Now</a>
+                                <button class="btn btn-outline view-curriculum" data-program="science">
+                                    <i class="fas fa-book-open"></i> Curriculum
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/business.jpg" alt="Business Program">
+                            <div class="program-age">Business</div>
+                        </div>
+                        <div class="program-content">
+                            <h3>Business Program</h3>
+                            <p class="program-description">Developing future entrepreneurs, accountants, and business leaders with practical skills and real-world business knowledge.</p>
+                            
+                            <ul class="program-features">
+                                <li><i class="fas fa-calculator"></i> Accounting & Business Management</li>
+                                <li><i class="fas fa-chart-line"></i> Economics & Costing</li>
+                                <li><i class="fas fa-lightbulb"></i> Entrepreneurship training</li>
+                                <li><i class="fas fa-desktop"></i> Computerized accounting</li>
+                                <li><i class="fas fa-handshake"></i> Business ethics</li>
+                                <li><i class="fas fa-briefcase"></i> Career opportunities guidance</li>
+                            </ul>
+                            
+                            <div class="program-actions">
+                                <a href="contact.html?program=business" class="btn">Enquire Now</a>
+                                <button class="btn btn-outline view-curriculum" data-program="business">
+                                    <i class="fas fa-book-open"></i> Curriculum
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/arts.jpg" alt="General Arts Program">
+                            <div class="program-age">General Arts</div>
+                        </div>
+                        <div class="program-content">
+                            <h3>General Arts</h3>
+                            <p class="program-description">A diverse program for students interested in law, humanities, social sciences, languages, and creative arts.</p>
+                            
+                            <ul class="program-features">
+                                <li><i class="fas fa-book"></i> Literature & Government</li>
+                                <li><i class="fas fa-church"></i> Christian Religious Studies</li>
+                                <li><i class="fas fa-language"></i> French & Ghanaian Languages</li>
+                                <li><i class="fas fa-globe-africa"></i> Geography & Economics</li>
+                                <li><i class="fas fa-landmark"></i> Law & Society</li>
+                                <li><i class="fas fa-theater-masks"></i> Drama & Performing Arts</li>
+                            </ul>
+                            
+                            <div class="program-actions">
+                                <a href="contact.html?program=arts" class="btn">Enquire Now</a>
+                                <button class="btn btn-outline view-curriculum" data-program="arts">
+                                    <i class="fas fa-book-open"></i> Curriculum
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="facilities" id="facilities">
+        <div class="container">
+            <h2>Our State-of-the-Art Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Science Laboratories</h3>
+                    <p>Modern, fully-equipped labs for Physics, Chemistry, and Biology with safety-certified equipment and dedicated lab technicians.</p>
+                </div>
+                
+                <div class="facility-card">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Computer Laboratory</h3>
+                    <p>Air-conditioned computer lab with high-speed internet, modern computers, and specialized software for all educational needs.</p>
+                </div>
+                
+                <div class="facility-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Resource Library</h3>
+                    <p>Well-stocked digital and physical library with quiet reading areas, study carrels, and multimedia learning resources.</p>
+                </div>
+                
+                <div class="facility-card">
+                    <i class="fas fa-futbol"></i>
+                    <h3>Sports Complex</h3>
+                    <p>Football field, basketball court, volleyball court, and playground with equipment for various sports activities.</p>
+                </div>
+                
+                <div class="facility-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Dining Hall</h3>
+                    <p>Spacious, hygienic dining area serving balanced, nutritious meals prepared in our modern kitchen facility.</p>
+                </div>
+                
+                <div class="facility-card">
+                    <i class="fas fa-first-aid"></i>
+                    <h3>Health Center</h3>
+                    <p>Fully equipped health center staffed with a qualified nurse, providing first aid and basic medical care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What are the school hours for different programs?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Creche & Nursery: 7:30 AM - 4:00 PM<br>
+                        Primary School: 7:30 AM - 3:30 PM<br>
+                        JHS & SHS: 7:00 AM - 4:00 PM<br>
+                        Extra-curricular activities run until 5:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the admission process?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>1. Submit completed application form with required documents<br>
+                        2. Attend interview/assessment (where applicable)<br>
+                        3. Receive admission offer letter<br>
+                        4. Pay required fees to secure placement<br>
+                        5. Attend orientation before school starts</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer transportation services?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer safe and reliable transportation services covering major routes in Kumasi and surrounding areas. Our buses are equipped with GPS tracking, safety belts, and are driven by certified drivers with trained attendants.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What extracurricular activities are available?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a wide range of extracurricular activities including: Sports (football, basketball, athletics), Music & Dance, Drama Club, Debate & Public Speaking, ICT Club, Science Club, French Club, and Community Service projects.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do you ensure student safety?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We have comprehensive safety measures including: 24/7 security personnel, CCTV surveillance, controlled access points, regular safety drills, first-aid trained staff, secure transportation, and strict visitor protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Join Our Community?</h2>
+            <p>Take the first step towards quality education for your child. Contact us today for more information or to schedule a school tour.</p>
+            
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-light">
+                    <i class="fas fa-calendar-alt"></i> Schedule a Visit
+                </a>
+                <a href="contact.html" class="btn btn-secondary">
+                    <i class="fas fa-download"></i> Download Prospectus
+                </a>
+                <a href="tel:+233545742764" class="btn">
+                    <i class="fas fa-phone"></i> Call Now: +233 54 574 2764
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Modal -->
+    <div class="modal" id="curriculumModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Curriculum Details</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Curriculum content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="School Logo">
+                    <p>Providing quality education in Ghana since 2010.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="staff.html">Our Staff</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> KNUST, Kumasi, Ghana</p>
+                    <p><i class="fas fa-phone"></i> +233 54 574 2764</p>
+                    <p><i class="fas fa-envelope"></i> info@uniqueassurance.edu.gh</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear">2024</span> Unique Assurance School Complex. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+            
+            
+</body>
+</html>

@@ -3,124 +3,676 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assurance</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title>Unique Assurance School Complex - Home</title>
+    <meta name="description" content="Unique Assurance School Complex provides quality education from creche to SHS in Ghana">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Additional styles for homepage enhancements */
+        .hero {
+            background: linear-gradient(rgba(108, 13, 100, 0.85), rgba(108, 13, 100, 0.9)), 
+                        url('images/hero-image.jpg') center/cover no-repeat fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/pattern.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn-watch {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+        }
+
+        .btn-watch:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .btn-watch i {
+            margin-right: 8px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+            transition: transform 0.3s;
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 30px;
+            overflow-y: auto;
+            max-height: calc(90vh - 80px);
+        }
+
+        /* Programs Preview Enhanced Styles - This will be populated by JavaScript */
+        .programs-preview {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 0;
+        }
+
+        .programs-preview h2 {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .programs-preview h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .programs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-color);
+        }
+
+        .program-icon-container {
+            background: linear-gradient(135deg, var(--primary-color), #8a1179);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-icon-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .program-icon {
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .program-card:hover .program-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .program-content {
+            padding: 30px;
+        }
+
+        .program-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .program-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .program-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+
+        .program-features li:last-child {
+            border-bottom: none;
+        }
+
+        .program-features li i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .program-cta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Quick Links Section */
+        .quick-links {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .quick-link-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .quick-link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            color: var(--primary-color);
+        }
+
+        .quick-link-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .programs-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+            
+            .program-cta {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .program-cta .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .program-card {
+                margin: 0 10px;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header & Navigation -->
     <header>
-        <!-- Logo Image -->
-        <img src="images/logo.png" alt="logoImage" class="logo">
-        <nav>
-            <a href="" class="active">Home</a>
-            <a href="">About</a>
-            <a href="">Programs</a>
-            <a href="">Contact</a>
-        </nav>
-        <button>Apply Now</button>
-    </header>
-    <main>
-
-        <img src="images/grad_hero.jpg" alt="hero-img" class="hero">
-        <div class="overlay">
-        <h1 class="schname">UNIQUE ASSURANCE SCHOOL COMPLEX</h1>
-        <h2 class="motto">“Raising Leaders Through Excellence, Discipline, and Christian Values.”</h2>
-        <div class="cont">
-            <button class="explore">Explore School</button>
-            <button class="enroll">Enroll Now</button>
-        </div>
-        </div>
-
-        <div class="features">
-            <h2>Features</h2>
-            <div class="feature-card">
-                <div class="card">
-                    <div class="icon-wrapper">
-                        <i class="fas fa-graduation-cap"></i>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Unique Assurance School Logo">
+                    <div class="logo-text">
+                        <h1>Unique Assurance</h1>
+                        <p>School Complex</p>
                     </div>
-                    <h3 class="feature-title">Quality Education</h3>
-                    <p class="feature-desc">
-                         We provide world-class academic programs with experienced faculty and modern teaching methods.
-                    </p>
-                </div>
-                <div class="card">
-                    <div class="icon-wrapper">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <h3 class="feature-title">Dedicated Teachers</h3>
-                    <p class="feature-desc">
-                        Our passionate and qualified teachers nurture every student's potential with care and commitment.
-                    </p> 
-                </div>
-                <div class="card">
-                    <div class="icon-wrapper">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3 class="feature-title">Modern Technology</h3>
-                    <p class="feature-desc">
-                        State-of-the-art computer labs and smart classrooms prepare students for the digital future.
-                    </p>
-                </div>
-                <div class="card">
-                    <div class="icon-wrapper">
-                        <i class="fas fa-cross"></i>
-                    </div>
-                    <h3 class="feature-title">Christian Values</h3>
-                    <p class="feature-desc">
-                    We instill moral values, compassion, and integrity rooted in Christian principles.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <section class="about-feature">
-            <h2>About Us</h2>
-            <div class="abt-img">
-                <img src="images/student-abt.jpg" alt="student_image">
-            </div>
-            <div class="content-abt">
-
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="block">
-            <div class="fabt">
-                <img src="images/logo.png" alt="footerLogo">
-                <h2>UNIQUE ASSURCHO</h2>
-                <q>Unique in studies</q>
-
-            </div>
-            <div class="links">
-                <a href="https://youtube.com/yourschool" target="_blank" class="social-link">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://youtube.com/yourschool" target="_blank" class="social-link">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://youtube.com/yourschool" target="_blank" class="social-link">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://youtube.com/yourschool" target="_blank" class="social-link">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-                <a href="https://youtube.com/yourschool" target="_blank" class="social-link">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
-
-            <div class="contact-info">
-                <div>
-                    <i class="fas fa-phone"></i>
-                    +233 54 574 2764 <br></div>
-                <div>
-                    <i class="fab fa-whatsapp"></i>
-                    +233 50 336 6564
                 </div>
                 
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="staff.html">Our Staff</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Excellence in Education Since 2010</h1>
+                <p>Providing holistic education from Creche to Senior High School in a nurturing environment that fosters academic excellence, moral values, and personal development.</p>
+                <div class="hero-buttons">
+                    <a href="programs.html" class="btn">Explore Programs</a>
+                    <a href="contact.html" class="btn btn-secondary">Admissions</a>
+                    <button class="btn btn-watch" id="watchVideoBtn">
+                        <i class="fas fa-play-circle"></i> Watch Video
+                    </button>
+                </div>
             </div>
         </div>
-     
-        <p>&copy;2025 <br>Unique Assurance Complex <br> all rights reserve </p>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Welcome to Unique Assurance School</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div style="margin-top: 20px;">
+                    <h4>About Our School</h4>
+                    <p>Watch this video to learn more about our facilities, teaching methods, and the vibrant community at Unique Assurance School Complex.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Unique Assurance?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Qualified Teachers</h3>
+                    <p>Our dedicated staff are highly qualified and experienced in their respective fields.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Modern Facilities</h3>
+                    <p>State-of-the-art science labs, computer labs, and well-equipped classrooms.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Holistic Development</h3>
+                    <p>We focus on academic, physical, emotional, and social development of each child.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safe Environment</h3>
+                    <p>Secure campus with CCTV surveillance and dedicated security personnel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Preview - This will be populated by JavaScript -->
+    <section class="programs-preview">
+        <div class="container">
+            <h2>Our Educational Programs</h2>
+            <div class="programs-container" id="programsContainer">
+                <!-- Program cards will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Details Modal -->
+    <div class="modal" id="programModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalProgramTitle">Program Details</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalProgramContent">
+                <!-- Program details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Students Enrolled</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Qualified Staff</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="14">0</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="95">0</div>
+                    <div class="stat-label">WASSCE Pass Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Quick Access</h2>
+            <div class="quick-links-grid">
+                <a href="contact.html" class="quick-link-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Schedule a Visit</h3>
+                    <p>Book a school tour to see our facilities</p>
+                </a>
+                
+                <a href="staff.html" class="quick-link-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Meet Our Staff</h3>
+                    <p>Get to know our qualified teachers</p>
+                </a>
+                
+                <a href="programs.html" class="quick-link-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>View Curriculum</h3>
+                    <p>Explore our educational programs</p>
+                </a>
+                
+                <button class="quick-link-card" id="downloadProspectusBtn" style="cursor: pointer; border: none;">
+                    <i class="fas fa-download"></i>
+                    <h3>Download Prospectus</h3>
+                    <p>Get our school brochure</p>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Modal -->
+    <div class="modal" id="downloadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Download School Prospectus</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="text-align: center; padding: 30px;">
+                    <i class="fas fa-file-pdf" style="font-size: 4rem; color: #e74c3c; margin-bottom: 20px;"></i>
+                    <h4>Unique Assurance School Prospectus 2024</h4>
+                    <p style="margin: 20px 0;">Download our complete school brochure containing information about all our programs, fees, facilities, and admission requirements.</p>
+                    
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                        <p><strong>File Information:</strong></p>
+                        <p>📄 PDF Format | 📏 2.5 MB | 📅 Updated: December 2024</p>
+                    </div>
+                    
+                    <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px;">
+                        <button class="btn" onclick="downloadFile()">
+                            <i class="fas fa-download"></i> Download PDF
+                        </button>
+                        <button class="btn btn-secondary" onclick="window.print()">
+                            <i class="fas fa-print"></i> Print Version
+                        </button>
+                    </div>
+                    
+                    <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        By downloading, you agree to receive occasional updates from Unique Assurance School.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="School Logo">
+                    <p>Providing quality education in Ghana since 2010.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="staff.html">Our Staff</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> KNUST, Kumasi, Ghana</p>
+                    <p><i class="fas fa-phone"></i> +233 54 574 2764</p>
+                    <p><i class="fas fa-envelope"></i> info@uniqueassurance.edu.gh</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear">2024</span> Unique Assurance School Complex. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="scripts/main.js">
+        
+    </script>
 </body>
 </html>

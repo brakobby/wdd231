@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Staff - Unique Assurance School Complex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Unique Assurance School Logo">
+                    <div class="logo-text">
+                        <h1>Unique Assurance</h1>
+                        <p>School Complex</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="staff.html" class="active">Our Staff</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="staff-hero">
+        <div class="container">
+            <h1>Meet Our Dedicated Staff</h1>
+            <p>Qualified professionals committed to your child's success</p>
+        </div>
+    </section>
+
+    <!-- Staff Navigation -->
+    <section class="staff-nav">
+        <div class="container">
+            <div class="staff-nav-container">
+                <button class="staff-tab active" data-target="administration">
+                    <i class="fas fa-user-tie"></i> Administration
+                </button>
+                <button class="staff-tab" data-target="academic">
+                    <i class="fas fa-chalkboard-teacher"></i> Academic Staff
+                </button>
+                <button class="staff-tab" data-target="support">
+                    <i class="fas fa-hands-helping"></i> Support Staff
+                </button>
+                <button class="staff-tab" data-target="stats">
+                    <i class="fas fa-chart-bar"></i> Our Numbers
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Administration Section -->
+    <section class="staff-section" id="administration">
+        <div class="container">
+            <h2>School Administration</h2>
+            <div class="staff-grid">
+                <!-- Headmistress -->
+                <div class="staff-card">
+                    <div class="staff-image-container">
+                        <img src="images/founder.jpg" alt="Mrs. Grace Mensah" class="staff-image">
+                        <div class="staff-image-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:headmistress@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="staff-info">
+                        <div class="staff-header">
+                            <h3 class="staff-name">Mr. Jackel MacMa</h3>
+                            <span class="staff-position">Headmistress & Founder</span>
+                            <p class="staff-qualifications">M.Ed Educational Leadership, B.Ed Arts</p>
+                        </div>
+                        <p class="staff-bio">With over 20 years of experience in education, Mrs. Mensah founded Unique Assurance with a vision to provide quality education to all children. She believes in holistic education that develops both character and intellect.</p>
+                        <div class="staff-details">
+                            <div class="staff-contact">
+                                <p><i class="fas fa-envelope"></i> headmistress@uniqueassurance.edu.gh</p>
+                                <p><i class="fas fa-phone"></i> Ext: 101</p>
+                            </div>
+                            <button class="view-profile-btn" data-staff="grace-mensah">View Profile</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- School Administrator -->
+                <div class="staff-card">
+                    <div class="staff-image-container">
+                        <img src="images/headt.webp" alt="Mr. Nyonator Samuel" class="staff-image">
+                        <div class="staff-image-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:admin@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="staff-info">
+                        <div class="staff-header">
+                            <h3 class="staff-name">Mr. Kwame Ofori</h3>
+                            <span class="staff-position">School Administrator</span>
+                            <p class="staff-qualifications">MBA, B.Sc. Business Administration</p>
+                        </div>
+                        <p class="staff-bio">Manages the day-to-day operations of the school and ensures smooth administrative processes. Former business executive with 15 years of management experience.</p>
+                        <div class="staff-details">
+                            <div class="staff-contact">
+                                <p><i class="fas fa-envelope"></i> admin@uniqueassurance.edu.gh</p>
+                                <p><i class="fas fa-phone"></i> Ext: 102</p>
+                            </div>
+                            <button class="view-profile-btn" data-staff="kwame-ofori">View Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Staff Section -->
+    <section class="staff-section" id="academic">
+        <div class="container">
+            <h2>Academic Staff</h2>
+            
+            <!-- Science Department -->
+            <div class="department">
+                <div class="department-header">
+                    <i class="fas fa-science"></i>
+                    <h3>Science Department</h3>
+                </div>
+                <div class="staff-grid">
+                    <div class="staff-card">
+                        <div class="staff-image-container">
+                            <img src="images/staff/teacher1.jpg" alt="Mr. Samuel Agyemang" class="staff-image">
+                            <div class="staff-image-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="mailto:physics@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="staff-info">
+                            <div class="staff-header">
+                                <h3 class="staff-name">Mr. Samuel Agyemang</h3>
+                                <span class="staff-position">Head of Science Department</span>
+                                <p class="staff-qualifications">M.Sc. Physics, B.Sc. Physics Education</p>
+                            </div>
+                            <p class="staff-bio">Specializes in Physics and Mathematics with 15 years of teaching experience. Passionate about making complex scientific concepts accessible to all students.</p>
+                            <div class="staff-details">
+                                <div class="staff-contact">
+                                    <p><i class="fas fa-envelope"></i> physics@uniqueassurance.edu.gh</p>
+                                </div>
+                                <!-- <button class="view-profile-btn" data-staff="samuel-agyemang">View Profile</button> -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="staff-card">
+                        <div class="staff-image-container">
+                            <img src="images/staff/counsellor.jpg" alt="Mrs. Akosua Bonsu" class="staff-image">
+                            <div class="staff-image-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="mailto:chemistry@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="staff-info">
+                            <div class="staff-header">
+                                <h3 class="staff-name">Mrs. Akosua Bonsu</h3>
+                                <span class="staff-position">Chemistry Teacher</span>
+                                <p class="staff-qualifications">M.Sc. Chemistry, B.Sc. Chemistry Education</p>
+                            </div>
+                            <p class="staff-bio">Passionate about making Chemistry fun and understandable for all students. Uses practical experiments to demonstrate chemical principles.</p>
+                            <div class="staff-details">
+                                <div class="staff-contact">
+                                    <p><i class="fas fa-envelope"></i> chemistry@uniqueassurance.edu.gh</p>
+                                </div>
+                                <!-- <button class="view-profile-btn" data-staff="akosua-bonsu">View Profile</button> -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="staff-card">
+                        <div class="staff-image-container">
+                            <img src="images/staff/scienceT.jpg" alt="Dr. Benjamin Kwame" class="staff-image">
+                            <div class="staff-image-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="mailto:biology@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="staff-info">
+                            <div class="staff-header">
+                                <h3 class="staff-name">Dr. Benjamin Kwame</h3>
+                                <span class="staff-position">Biology Teacher</span>
+                                <p class="staff-qualifications">Ph.D. Biology, M.Sc. Biotechnology</p>
+                            </div>
+                            <p class="staff-bio">Former university lecturer with expertise in molecular biology and genetics. Focuses on real-world applications of biological concepts.</p>
+                            <div class="staff-details">
+                                <div class="staff-contact">
+                                    <p><i class="fas fa-envelope"></i> biology@uniqueassurance.edu.gh</p>
+                                </div>
+                                <!-- <button class="view-profile-btn" data-staff="benjamin-kwame">View Profile</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Business Department -->
+            <div class="department" style="margin-top: 80px;">
+                <div class="department-header">
+                    <i class="fas fa-business-time"></i>
+                    <h3>Business Department</h3>
+                </div>
+                <div class="staff-grid">
+                    <div class="staff-card">
+                        <div class="staff-image-container">
+                            <img src="images/staff/business1.jpeg" alt="Mr. David Asare" class="staff-image">
+                            <div class="staff-image-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="mailto:business@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="staff-info">
+                            <div class="staff-header">
+                                <h3 class="staff-name">Mr. David Asare</h3>
+                                <span class="staff-position">Head of Business Department</span>
+                                <p class="staff-qualifications">MBA, B.Sc. Accounting (First Class)</p>
+                            </div>
+                            <p class="staff-bio">Former accountant with practical business experience to share with students. Specializes in entrepreneurship and financial management.</p>
+                            <div class="staff-details">
+                                <div class="staff-contact">
+                                    <p><i class="fas fa-envelope"></i> business@uniqueassurance.edu.gh</p>
+                                </div>
+                                <!-- <button class="view-profile-btn" data-staff="david-asare">View Profile</button> -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="staff-card">
+                        <div class="staff-image-container">
+                            <img src="images/staff/business2.jpeg" alt="Mrs. Evelyn Osei" class="staff-image">
+                            <div class="staff-image-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="mailto:economics@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="staff-info">
+                            <div class="staff-header">
+                                <h3 class="staff-name">Mrs. Evelyn Osei</h3>
+                                <span class="staff-position">Economics & Costing Teacher</span>
+                                <p class="staff-qualifications">M.Sc. Economics, B.Sc. Economics</p>
+                            </div>
+                            <p class="staff-bio">Expert in micro and macroeconomics with 10 years of teaching experience. Focuses on real-world economic applications and case studies.</p>
+                            <div class="staff-details">
+                                <div class="staff-contact">
+                                    <p><i class="fas fa-envelope"></i> economics@uniqueassurance.edu.gh</p>
+                                </div>
+                                <!-- <button class="view-profile-btn" data-staff="evelyn-osei">View Profile</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Arts Department -->
+            <div class="department" style="margin-top: 80px;">
+                <div class="department-header">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Arts Department</h3>
+                </div>
+                <div class="staff-grid">
+                    <div class="staff-card">
+                        <div class="staff-image-container">
+                            <img src="images/staff/scientist.jpg" alt="Mrs. Comfort Asante" class="staff-image">
+                            <div class="staff-image-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="mailto:literature@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="staff-info">
+                            <div class="staff-header">
+                                <h3 class="staff-name">Mrs. Comfort Asante</h3>
+                                <span class="staff-position">Head of Arts Department</span>
+                                <p class="staff-qualifications">M.A. Literature, B.A. English & History</p>
+                            </div>
+                            <p class="staff-bio">Specializes in Literature and Social Studies with 12 years of experience. Published author and passionate about African literature.</p>
+                            <div class="staff-details">
+                                <div class="staff-contact">
+                                    <p><i class="fas fa-envelope"></i> literature@uniqueassurance.edu.gh</p>
+                                </div>
+                                <!-- <button class="view-profile-btn" data-staff="comfort-asante">View Profile</button> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="staff-card">
+                        <div class="staff-image-container">
+                            <img src="images/staff/scientist.jpg" alt="Mrs. Comfort Asante" class="staff-image">
+                            <div class="staff-image-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="mailto:literature@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="staff-info">
+                            <div class="staff-header">
+                                <h3 class="staff-name">Mrs. Comfort Asante</h3>
+                                <span class="staff-position">Head of Arts Department</span>
+                                <p class="staff-qualifications">M.A. Literature, B.A. English & History</p>
+                            </div>
+                            <p class="staff-bio">Specializes in Literature and Social Studies with 12 years of experience. Published author and passionate about African literature.</p>
+                            <div class="staff-details">
+                                <div class="staff-contact">
+                                    <p><i class="fas fa-envelope"></i> literature@uniqueassurance.edu.gh</p>
+                                </div>
+                                <!-- <button class="view-profile-btn" data-staff="comfort-asante">View Profile</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Basic School Teachers -->
+            <div class="department" style="margin-top: 80px;">
+                <div class="department-header">
+                    <i class="fas fa-child"></i>
+                    <h3>Basic School Teachers</h3>
+                </div>
+                <div class="staff-grid">
+                    <div class="staff-card">
+                        <div class="staff-image-container">
+                            <img src="images/staff/cordinator2.jpg" alt="Miss Abigail Boateng" class="staff-image">
+                            <div class="staff-image-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="mailto:primary@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="staff-info">
+                            <div class="staff-header">
+                                <h3 class="staff-name">Miss Abigail Boateng</h3>
+                                <span class="staff-position">Primary Coordinator</span>
+                                <p class="staff-qualifications">B.Ed Basic Education, Diploma in Child Psychology</p>
+                            </div>
+                            <p class="staff-bio">Specializes in early childhood education and curriculum development. Creates engaging learning environments for young learners.</p>
+                            <div class="staff-details">
+                                <div class="staff-contact">
+                                    <p><i class="fas fa-envelope"></i> primary@uniqueassurance.edu.gh</p>
+                                </div>
+                                <!-- <button class="view-profile-btn" data-staff="abigail-boateng">View Profile</button> -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="staff-card">
+                        <div class="staff-image-container">
+                            <img src="images/staff/cordinator1.jpg" alt="Mr. Emmanuel Tetteh" class="staff-image">
+                            <div class="staff-image-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="mailto:jhs@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="staff-info">
+                            <div class="staff-header">
+                                <h3 class="staff-name">Mr. Emmanuel Tetteh</h3>
+                                <span class="staff-position">JHS Coordinator</span>
+                                <p class="staff-qualifications">M.Ed Curriculum Studies, B.Ed Social Studies</p>
+                            </div>
+                            <p class="staff-bio">Expert in BECE preparation with 98% pass rate among his students over the past 5 years. Focuses on exam techniques and study skills.</p>
+                            <div class="staff-details">
+                                <div class="staff-contact">
+                                    <p><i class="fas fa-envelope"></i> jhs@uniqueassurance.edu.gh</p>
+                                </div>
+                                <!-- <button class="view-profile-btn" data-staff="emmanuel-tetteh">View Profile</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Staff Section -->
+    <section class="staff-section" id="support">
+        <div class="container">
+            <h2>Support Staff</h2>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <div class="staff-image-container">
+                        <img src="images/staff/counsellor.jpg" alt="Mrs. Esther Osei" class="staff-image">
+                        <div class="staff-image-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:counseling@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="staff-info">
+                        <div class="staff-header">
+                            <h3 class="staff-name">Mrs. Esther Osei</h3>
+                            <span class="staff-position">School Counselor</span>
+                            <p class="staff-qualifications">M.A. Counseling Psychology, Certified Career Counselor</p>
+                        </div>
+                        <p class="staff-bio">Provides guidance and support to students' academic and personal development. Specializes in adolescent psychology and career counseling.</p>
+                        <div class="staff-details">
+                            <div class="staff-contact">
+                                <p><i class="fas fa-envelope"></i> counseling@uniqueassurance.edu.gh</p>
+                                <!-- <p><i class="fas fa-phone"></i> Ext: 201</p> -->
+                            </div>
+                            <!-- <button class="view-profile-btn" data-staff="esther-osei">View Profile</button> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-image-container">
+                        <img src="images/staff/nurse.jpg" alt="Miss Sarah Johnson" class="staff-image">
+                        <div class="staff-image-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:health@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="staff-info">
+                        <div class="staff-header">
+                            <h3 class="staff-name">Miss Sarah Johnson</h3>
+                            <span class="staff-position">School Nurse</span>
+                            <p class="staff-qualifications">Registered Nurse (RN), Diploma in School Health</p>
+                        </div>
+                        <p class="staff-bio">Manages the school's health center and provides first aid, health education, and wellness programs for students and staff.</p>
+                        <div class="staff-details">
+                            <div class="staff-contact">
+                                <p><i class="fas fa-envelope"></i> health@uniqueassurance.edu.gh</p>
+                                <!-- <p><i class="fas fa-phone"></i> Ext: 202</p> -->
+                            </div>
+                            <!-- <button class="view-profile-btn" data-staff="sarah-johnson">View Profile</button> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-image-container">
+                        <img src="images/staff/teacher1.jpg" alt="Mr. Kofi Ansah" class="staff-image">
+                        <div class="staff-image-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:library@uniqueassurance.edu.gh"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="staff-info">
+                        <div class="staff-header">
+                            <h3 class="staff-name">Mr. Kofi Ansah</h3>
+                            <span class="staff-position">School Librarian</span>
+                            <p class="staff-qualifications">M.L.I.S, B.A. Information Studies</p>
+                        </div>
+                        <p class="staff-bio">Manages the school library and information resources. Organizes reading programs and research skills workshops for students.</p>
+                        <div class="staff-details">
+                            <div class="staff-contact">
+                                <p><i class="fas fa-envelope"></i> library@uniqueassurance.edu.gh</p>
+                            </div>
+                            <!-- <button class="view-profile-btn" data-staff="kofi-ansah">View Profile</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <h2>Our Staff in Numbers</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Qualified Staff</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Years Average Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="85">0</div>
+                    <div class="stat-label">Postgraduate Qualifications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="10">0</div>
+                    <div class="stat-label">Subject Departments</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Want to Join Our Team?</h2>
+            <p>We're always looking for passionate educators and support staff to join our growing team. Send us your CV today!</p>
+            
+            <div class="cta-buttons">
+                <a href="contact.html?subject=Employment" class="btn btn-light">
+                    <i class="fas fa-briefcase"></i> View Open Positions
+                </a>
+                <a href="mailto:careers@uniqueassurance.edu.gh" class="btn btn-secondary">
+                    <i class="fas fa-paper-plane"></i> Send Your CV
+                </a>
+                <a href="contact.html" class="btn">
+                    <i class="fas fa-comments"></i> Contact HR
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Profile Modal -->
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Staff Profile</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Profile content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="School Logo">
+                    <p>Providing quality education in Ghana since 2010.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="staff.html">Our Staff</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> KNUST, Kumasi, Ghana</p>
+                    <p><i class="fas fa-phone"></i> +233 54 574 2764</p>
+                    <p><i class="fas fa-envelope"></i> info@uniqueassurance.edu.gh</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear">2024</span> Unique Assurance School Complex. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Staff Data
+        const staffProfiles = {
+            'grace-mensah': {
+                name: 'Mrs. Grace Mensah',
+                position: 'Headmistress & Founder',
+                qualifications: 'M.Ed Educational Leadership, B.Ed Arts',
+                email: 'headmistress@uniqueassurance.edu.gh',
+                phone: '',
+                bio: 'With over 20 years of experience in education, Mrs. Grace Mensah founded Unique Assurance School Complex with a vision to create an inclusive learning environment that nurtures every child\'s potential. Her leadership philosophy emphasizes holistic development, combining academic excellence with character building.',
+                experience: '25+ years in education, 14 years as Headmistress',
+                specialization: 'Educational Leadership, Curriculum Development',
+                achievements: [
+                    'Recipient of Ghana Education Service Excellence Award 2022',
+                    'Published research on "Inclusive Education in Ghana"',
+                    'Led school to achieve 95% WASSCE pass rate for 5 consecutive years'
+                ],
+                education: [
+                    'M.Ed Educational Leadership - University of Cape Coast',
+                    'B.Ed Arts - University of Education, Winneba',
+                    'Diploma in Child Psychology',
+                    'Certificate in School Management'
+                ]
+            },
+            'kwame-ofori': {
+                name: 'Mr. Kwame Ofori',
+                position: 'School Administrator',
+                qualifications: 'MBA, B.Sc. Business Administration',
+                email: 'admin@uniqueassurance.edu.gh',
+                phone: '',
+                bio: 'Former business executive with 15 years of management experience in the corporate sector. Brings efficiency and strategic planning to school operations, ensuring smooth administrative processes and optimal resource management.',
+                experience: '15 years in administration, 8 years in education sector',
+                specialization: 'Operations Management, Strategic Planning',
+                achievements: [
+                    'Implemented digital school management system',
+                    'Reduced operational costs by 25% through efficiency measures',
+                    'Developed staff training and development program'
+                ],
+                education: [
+                    'MBA - Ghana Institute of Management and Public Administration',
+                    'B.Sc. Business Administration - KNUST',
+                    'Certificate in Project Management',
+                    'Diploma in Human Resource Management'
+                ]
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    this.innerHTML = navLinks.classList.contains('active') 
+                        ? '<i class="fas fa-times"></i>' 
+                        : '<i class="fas fa-bars"></i>';
+                });
+            }
+            
+            // Staff tabs navigation
+            const staffTabs = document.querySelectorAll('.staff-tab');
+            const staffSections = document.querySelectorAll('.staff-section');
+            const statsSection = document.getElementById('stats');
+            
+            staffTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const target = this.dataset.target;
+                    
+                    // Update active tab
+                    staffTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Scroll to target section
+                    if (target === 'stats') {
+                        statsSection.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        const targetSection = document.getElementById(target);
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+            
+            // Staff Profile Modal
+            const profileModal = document.getElementById('profileModal');
+            const viewProfileBtns = document.querySelectorAll('.view-profile-btn');
+            const closeModalBtn = document.querySelector('.close-modal');
+            
+            // Open profile modal
+            viewProfileBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const staffId = this.dataset.staff;
+                    const profile = staffProfiles[staffId];
+                    
+                    if (profile) {
+                        document.getElementById('modalTitle').textContent = profile.name;
+                        
+                        const achievementsList = profile.achievements.map(ach => 
+                            `<li><i class="fas fa-trophy"></i> ${ach}</li>`
+                        ).join('');
+                        
+                        const educationList = profile.education.map(edu => 
+                            `<li><i class="fas fa-graduation-cap"></i> ${edu}</li>`
+                        ).join('');
+                        
+                        document.getElementById('modalBody').innerHTML = `
+                            <div class="profile-content">
+                                <div class="profile-image">
+                                    <img src="images/staff/${staffId}.jpg" alt="${profile.name}">
+                                </div>
+                                <div class="profile-details">
+                                    <h4>${profile.position}</h4>
+                                    <p><strong>Qualifications:</strong> ${profile.qualifications}</p>
+                                    <p><strong>Experience:</strong> ${profile.experience}</p>
+                                    <p><strong>Specialization:</strong> ${profile.specialization}</p>
+                                    
+                                    <h4>Professional Bio</h4>
+                                    <p>${profile.bio}</p>
+                                    
+                                    <h4>Key Achievements</h4>
+                                    <ul>${achievementsList}</ul>
+                                    
+                                    <h4>Education</h4>
+                                    <ul>${educationList}</ul>
+                                    
+                                    <div style="margin-top: 20px;">
+                                        <p><strong>Contact:</strong></p>
+                                        <p><i class="fas fa-envelope"></i> ${profile.email}</p>
+                                        <p><i class="fas fa-phone"></i> ${profile.phone}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        profileModal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+            
+            // Close modal
+            closeModalBtn.addEventListener('click', () => {
+                profileModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close modal when clicking outside
+            profileModal.addEventListener('click', (e) => {
+                if (e.target === profileModal) {
+                    profileModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Animated counter for stats
+            function animateStats() {
+                const statNumbers = document.querySelectorAll('.stat-number');
+                
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-count'));
+                    const duration = 2000; // 2 seconds
+                    const increment = target / (duration / 16); // 60fps
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(current) + (stat.getAttribute('data-count') === '85' ? '%' : '+');
+                    }, 16);
+                });
+            }
+            
+            // Animate staff cards on scroll
+            function animateStaffCards() {
+                const staffCards = document.querySelectorAll('.staff-card');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                staffCards.forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(50px)';
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    observer.observe(card);
+                });
+            }
+            
+            // Update copyright year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Initialize animations
+            animateStats();
+            animateStaffCards();
+            
+            // Add scroll spy for staff tabs
+            function updateActiveTabOnScroll() {
+                const sections = [
+                    { id: 'administration', element: document.getElementById('administration') },
+                    { id: 'academic', element: document.getElementById('academic') },
+                    { id: 'support', element: document.getElementById('support') },
+                    { id: 'stats', element: document.getElementById('stats') }
+                ];
+                
+                window.addEventListener('scroll', () => {
+                    const scrollPosition = window.scrollY + 200;
+                    
+                    sections.forEach(section => {
+                        if (section.element) {
+                            const sectionTop = section.element.offsetTop;
+                            const sectionBottom = sectionTop + section.element.offsetHeight;
+                            
+                            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                                staffTabs.forEach(tab => tab.classList.remove('active'));
+                                const activeTab = document.querySelector(`.staff-tab[data-target="${section.id}"]`);
+                                if (activeTab) activeTab.classList.add('active');
+                            }
+                        }
+                    });
+                });
+            }
+            
+            updateActiveTabOnScroll();
+        });
+    </script>
+</body>
+</html>

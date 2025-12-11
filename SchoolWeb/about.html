@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Unique Assurance School Complex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            background: linear-gradient(rgba(108, 13, 100, 0.85), rgba(108, 13, 100, 0.9)), 
+                        url('images/about-hero.jpg') center/cover no-repeat fixed;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/pattern.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .about-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Our Story Section */
+        .our-story {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .story-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .story-content h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .story-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .story-text {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .story-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .story-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .story-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Achievements */
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .achievement-item {
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .achievement-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-color);
+        }
+
+        .achievement-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .achievement-item p {
+            color: #666;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Mission & Vision */
+        .mission-vision {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .mission-card, .vision-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .mission-card::before, .vision-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-color);
+        }
+
+        .mission-card i, .vision-card i {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        .mission-card h3, .vision-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .mission-card p, .vision-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Values Section */
+        .our-values {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .our-values h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .our-values h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-item {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        .value-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .value-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .value-item i {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .value-item:hover i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .value-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .value-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .timeline-section h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 50%;
+            padding-right: 40px;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-left: 40px;
+            padding-right: 0;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            background: white;
+            transform: rotate(45deg);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: auto;
+            left: -15px;
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .founder-section h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .founder-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .founder-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+
+        .founder-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .founder-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .founder-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .founder-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .founder-title {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+            font-size: 1.2rem;
+        }
+
+        .founder-quote {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            position: relative;
+            font-style: italic;
+        }
+
+        .founder-quote::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--secondary-color);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        /* Gallery Preview */
+        .gallery-preview {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .gallery-preview h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .gallery-preview h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(108, 13, 100, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* Modal Styles for Gallery */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .modal-image {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: auto;
+            max-height: 70vh;
+            object-fit: contain;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .modal-caption {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-hero {
+                height: 50vh;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 70px;
+            }
+            
+            .timeline-content::before {
+                left: -15px;
+                right: auto;
+            }
+            
+            .achievements {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .achievements {
+                grid-template-columns: 1fr;
+            }
+            
+            .mission-vision-grid,
+            .values-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .founder-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Unique Assurance School Logo">
+                    <div class="logo-text">
+                        <h1>Unique Assurance</h1>
+                        <p>School Complex</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="staff.html">Our Staff</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About Unique Assurance</h1>
+            <p>Shaping Future Leaders Since 2010</p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="our-story">
+        <div class="container">
+            <div class="story-content">
+                <h2>Our Story</h2>
+                <div class="story-text">
+                    <div>
+                        <p>Founded in 2010, Unique Assurance School Complex began with a vision to provide quality, affordable education to children in Kumasi and its environs. What started as a small creche has now grown into a comprehensive educational institution serving students from Creche through Senior High School.</p>
+                        
+                        <p>Our founder, Mrs. Grace Mensah, envisioned a school where every child would receive individual attention and holistic development. She started with just 15 students and 3 teachers, driven by a passion for education and a belief in nurturing young minds.</p>
+                    </div>
+                    <div class="story-image">
+                        <img src="images/school.png" alt="Unique Assurance School Building">
+                    </div>
+                </div>
+                
+                <div class="achievements">
+                    <div class="achievement-item">
+                        <h3 data-count="500">0</h3>
+                        <p>Students Enrolled</p>
+                    </div>
+                    <div class="achievement-item">
+                        <h3 data-count="50">0</h3>
+                        <p>Qualified Staff</p>
+                    </div>
+                    <div class="achievement-item">
+                        <h3 data-count="14">0</h3>
+                        <p>Years of Excellence</p>
+                    </div>
+                    <div class="achievement-item">
+                        <h3 data-count="95">0</h3>
+                        <p>WASSCE Pass Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mission-vision-grid">
+                <div class="mission-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To provide a holistic education that develops students academically, morally, and socially, preparing them to become responsible citizens and future leaders who contribute positively to society.</p>
+                </div>
+                
+                <div class="vision-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To be the leading educational institution in Ghana recognized for excellence in academic achievement, character development, innovation, and producing well-rounded individuals ready for global challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2>Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2010</span>
+                        <h3>Foundation Year</h3>
+                        <p>Unique Assurance School was founded with just a creche facility, starting with 15 students and 3 dedicated teachers.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2012</span>
+                        <h3>Expansion to Nursery</h3>
+                        <p>Expanded our programs to include nursery education, growing our student population to 50 children.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2015</span>
+                        <h3>Primary School Launch</h3>
+                        <p>Started Primary School program with first batch of 30 students and state-of-the-art facilities.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2018</span>
+                        <h3>JHS Accreditation</h3>
+                        <p>Received full accreditation for Junior High School program from Ghana Education Service.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2020</span>
+                        <h3>SHS Program Launch</h3>
+                        <p>Launched Senior High School program with Science, Business, and General Arts options.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2024</span>
+                        <h3>Modern Campus</h3>
+                        <p>Completed new modern campus with science labs, computer labs, and sports facilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="our-values">
+        <div class="container">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-award"></i>
+                    <h3>Excellence</h3>
+                    <p>We strive for the highest standards in all we do, from academic performance to character development.</p>
+                </div>
+                
+                <div class="value-item">
+                    <i class="fas fa-heart"></i>
+                    <h3>Integrity</h3>
+                    <p>We uphold honesty, transparency, and moral principles in all our interactions and operations.</p>
+                </div>
+                
+                <div class="value-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Respect</h3>
+                    <p>We value diversity and treat everyone with dignity, creating an inclusive environment for all.</p>
+                </div>
+                
+                <div class="value-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>We embrace creative teaching methods and modern technology to enhance learning experiences.</p>
+                </div>
+                
+                <div class="value-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Community</h3>
+                    <p>We foster strong relationships with parents and the community to support student success.</p>
+                </div>
+                
+                <div class="value-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Lifelong Learning</h3>
+                    <p>We cultivate curiosity and a love for learning that extends beyond the classroom.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="container">
+            <h2>Meet Our Founder</h2>
+            <div class="founder-content">
+                <div class="founder-image">
+                    <img src="images/founder.jpg" alt="Mrs. Grace Mensah - Founder">
+                </div>
+                <div class="founder-info">
+                    <h3>Mrs. Grace Mensah</h3>
+                    <span class="founder-title">Founder & Headmistress</span>
+                    <p>With over 25 years of experience in education, Mrs. Grace Mensah founded Unique Assurance School Complex with a vision to create an institution that would nurture young minds and prepare them for future challenges.</p>
+                    
+                    <p>Her educational philosophy centers on holistic development, believing that every child deserves quality education combined with moral and character building.</p>
+                    
+                    <div class="founder-quote">
+                        "Education is not just about academic excellence, but about shaping character, building confidence, and preparing young minds to become responsible global citizens."
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <h4>Qualifications</h4>
+                        <ul style="color: #555;">
+                            <li>M.Ed Educational Leadership (University of Cape Coast)</li>
+                            <li>B.Ed Arts (University of Education, Winneba)</li>
+                            <li>Certificate in Child Psychology</li>
+                            <li>Member, Ghana National Association of Private Schools</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section class="gallery-preview">
+        <div class="container">
+            <h2>Campus Life</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-image="images/gallery1.jpg" data-caption="Modern Classroom">
+                    <img src="images/gallary1.jpeg" alt="Classroom">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-image="images/gallery2.jpg" data-caption="Science Laboratory">
+                    <img src="images/laboratory.jpg" alt="Science Lab">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-image="images/gallery3.jpg" data-caption="Sports Day">
+                    <img src="images/sports.jpeg" alt="Sports">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-image="images/gallery4.jpg" data-caption="Library">
+                    <img src="images/library.jpg" alt="Library">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div class="modal" id="galleryModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-image">
+                <img id="modalImg" src="" alt="">
+            </div>
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="School Logo">
+                    <p>Providing quality education in Ghana since 2010.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="staff.html">Our Staff</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> KNUST, Kumasi, Ghana</p>
+                    <p><i class="fas fa-phone"></i> +233 54 574 2764</p>
+                    <p><i class="fas fa-envelope"></i> info@uniqueassurance.edu.gh</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear">2024</span> Unique Assurance School Complex. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    this.innerHTML = navLinks.classList.contains('active') 
+                        ? '<i class="fas fa-times"></i>' 
+                        : '<i class="fas fa-bars"></i>';
+                });
+            }
+            
+            // Animated counter for achievements
+            function animateAchievements() {
+                const achievementItems = document.querySelectorAll('.achievement-item h3');
+                
+                achievementItems.forEach(item => {
+                    const target = parseInt(item.getAttribute('data-count'));
+                    const duration = 2000; // 2 seconds
+                    const increment = target / (duration / 16); // 60fps
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        item.textContent = Math.floor(current) + (item.getAttribute('data-count') === '95' ? '%' : '+');
+                    }, 16);
+                });
+            }
+            
+            // Gallery modal functionality
+            const galleryModal = document.getElementById('galleryModal');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const modalImg = document.getElementById('modalImg');
+            const modalCaption = document.getElementById('modalCaption');
+            const closeModalBtn = document.querySelector('.close-modal');
+            
+            // Open gallery modal
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const imageSrc = this.getAttribute('data-image');
+                    const caption = this.getAttribute('data-caption');
+                    
+                    modalImg.src = imageSrc;
+                    modalCaption.textContent = caption;
+                    galleryModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Close modal
+            closeModalBtn.addEventListener('click', () => {
+                galleryModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close modal when clicking outside
+            galleryModal.addEventListener('click', (e) => {
+                if (e.target === galleryModal) {
+                    galleryModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && galleryModal.classList.contains('active')) {
+                    galleryModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Animate timeline items on scroll
+            function animateTimeline() {
+                const timelineItems = document.querySelectorAll('.timeline-item');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                timelineItems.forEach(item => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    observer.observe(item);
+                });
+            }
+            
+            // Update copyright year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Initialize animations
+            animateAchievements();
+            animateTimeline();
+            
+            // Animate values on hover
+            const valueItems = document.querySelectorAll('.value-item');
+            valueItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('i');
+                    icon.style.transform = 'scale(1.2) rotate(5deg)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('i');
+                    icon.style.transform = 'scale(1) rotate(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
