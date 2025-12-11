@@ -679,4 +679,361 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             }
             
             updateActiveTabOnScroll();
-  
+
+
+// About Us
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            this.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+    }
+    
+    // Animated counter for achievements
+    function animateAchievements() {
+        const achievementItems = document.querySelectorAll('.achievement-item h3');
+        
+        achievementItems.forEach(item => {
+            const target = parseInt(item.getAttribute('data-count'));
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60fps
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                item.textContent = Math.floor(current) + (item.getAttribute('data-count') === '95' ? '%' : '+');
+            }, 16);
+        });
+    }
+    
+    // Gallery modal functionality
+    const galleryModal = document.getElementById('galleryModal');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const modalImg = document.getElementById('modalImg');
+    const modalCaption = document.getElementById('modalCaption');
+    const closeModalBtn = document.querySelector('.close-modal');
+    
+    // Open gallery modal
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const imageSrc = this.getAttribute('data-image');
+            const caption = this.getAttribute('data-caption');
+            
+            modalImg.src = imageSrc;
+            modalCaption.textContent = caption;
+            galleryModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    // Close modal
+    closeModalBtn.addEventListener('click', () => {
+        galleryModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close modal when clicking outside
+    galleryModal.addEventListener('click', (e) => {
+        if (e.target === galleryModal) {
+            galleryModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && galleryModal.classList.contains('active')) {
+            galleryModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Animate timeline items on scroll
+    function animateTimeline() {
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        timelineItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(item);
+        });
+    }
+    
+    // Update copyright year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Initialize animations
+    animateAchievements();
+    animateTimeline();
+    
+    // Animate values on hover
+    const valueItems = document.querySelectorAll('.value-item');
+    valueItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.2) rotate(5deg)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    });
+});
+
+
+
+// Staff Data
+const staffProfiles = {
+    'grace-mensah': {
+        name: 'Mrs. Grace Mensah',
+        position: 'Headmistress & Founder',
+        qualifications: 'M.Ed Educational Leadership, B.Ed Arts',
+        email: 'headmistress@uniqueassurance.edu.gh',
+        phone: '',
+        bio: 'With over 20 years of experience in education, Mrs. Grace Mensah founded Unique Assurance School Complex with a vision to create an inclusive learning environment that nurtures every child\'s potential. Her leadership philosophy emphasizes holistic development, combining academic excellence with character building.',
+        experience: '25+ years in education, 14 years as Headmistress',
+        specialization: 'Educational Leadership, Curriculum Development',
+        achievements: [
+            'Recipient of Ghana Education Service Excellence Award 2022',
+            'Published research on "Inclusive Education in Ghana"',
+            'Led school to achieve 95% WASSCE pass rate for 5 consecutive years'
+        ],
+        education: [
+            'M.Ed Educational Leadership - University of Cape Coast',
+            'B.Ed Arts - University of Education, Winneba',
+            'Diploma in Child Psychology',
+            'Certificate in School Management'
+        ]
+    },
+    'kwame-ofori': {
+        name: 'Mr. Kwame Ofori',
+        position: 'School Administrator',
+        qualifications: 'MBA, B.Sc. Business Administration',
+        email: 'admin@uniqueassurance.edu.gh',
+        phone: '',
+        bio: 'Former business executive with 15 years of management experience in the corporate sector. Brings efficiency and strategic planning to school operations, ensuring smooth administrative processes and optimal resource management.',
+        experience: '15 years in administration, 8 years in education sector',
+        specialization: 'Operations Management, Strategic Planning',
+        achievements: [
+            'Implemented digital school management system',
+            'Reduced operational costs by 25% through efficiency measures',
+            'Developed staff training and development program'
+        ],
+        education: [
+            'MBA - Ghana Institute of Management and Public Administration',
+            'B.Sc. Business Administration - KNUST',
+            'Certificate in Project Management',
+            'Diploma in Human Resource Management'
+        ]
+    }
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            this.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+    }
+    
+    // Staff tabs navigation
+    const staffTabs = document.querySelectorAll('.staff-tab');
+    const staffSections = document.querySelectorAll('.staff-section');
+    const statsSection = document.getElementById('stats');
+    
+    staffTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const target = this.dataset.target;
+            
+            // Update active tab
+            staffTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Scroll to target section
+            if (target === 'stats') {
+                statsSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                const targetSection = document.getElementById(target);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+    
+    // Staff Profile Modal
+    const profileModal = document.getElementById('profileModal');
+    const viewProfileBtns = document.querySelectorAll('.view-profile-btn');
+    const closeModalBtn = document.querySelector('.close-modal');
+    
+    // Open profile modal
+    viewProfileBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const staffId = this.dataset.staff;
+            const profile = staffProfiles[staffId];
+            
+            if (profile) {
+                document.getElementById('modalTitle').textContent = profile.name;
+                
+                const achievementsList = profile.achievements.map(ach => 
+                    `<li><i class="fas fa-trophy"></i> ${ach}</li>`
+                ).join('');
+                
+                const educationList = profile.education.map(edu => 
+                    `<li><i class="fas fa-graduation-cap"></i> ${edu}</li>`
+                ).join('');
+                
+                document.getElementById('modalBody').innerHTML = `
+                    <div class="profile-content">
+                        <div class="profile-image">
+                            <img src="images/staff/${staffId}.jpg" alt="${profile.name}">
+                        </div>
+                        <div class="profile-details">
+                            <h4>${profile.position}</h4>
+                            <p><strong>Qualifications:</strong> ${profile.qualifications}</p>
+                            <p><strong>Experience:</strong> ${profile.experience}</p>
+                            <p><strong>Specialization:</strong> ${profile.specialization}</p>
+                            
+                            <h4>Professional Bio</h4>
+                            <p>${profile.bio}</p>
+                            
+                            <h4>Key Achievements</h4>
+                            <ul>${achievementsList}</ul>
+                            
+                            <h4>Education</h4>
+                            <ul>${educationList}</ul>
+                            
+                            <div style="margin-top: 20px;">
+                                <p><strong>Contact:</strong></p>
+                                <p><i class="fas fa-envelope"></i> ${profile.email}</p>
+                                <p><i class="fas fa-phone"></i> ${profile.phone}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                profileModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    // Close modal
+    closeModalBtn.addEventListener('click', () => {
+        profileModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close modal when clicking outside
+    profileModal.addEventListener('click', (e) => {
+        if (e.target === profileModal) {
+            profileModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Animated counter for stats
+    function animateStats() {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-count'));
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60fps
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                stat.textContent = Math.floor(current) + (stat.getAttribute('data-count') === '85' ? '%' : '+');
+            }, 16);
+        });
+    }
+    
+    // Animate staff cards on scroll
+    function animateStaffCards() {
+        const staffCards = document.querySelectorAll('.staff-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        staffCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    }
+    
+    // Update copyright year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Initialize animations
+    animateStats();
+    animateStaffCards();
+    
+    // Add scroll spy for staff tabs
+    function updateActiveTabOnScroll() {
+        const sections = [
+            { id: 'administration', element: document.getElementById('administration') },
+            { id: 'academic', element: document.getElementById('academic') },
+            { id: 'support', element: document.getElementById('support') },
+            { id: 'stats', element: document.getElementById('stats') }
+        ];
+        
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY + 200;
+            
+            sections.forEach(section => {
+                if (section.element) {
+                    const sectionTop = section.element.offsetTop;
+                    const sectionBottom = sectionTop + section.element.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        staffTabs.forEach(tab => tab.classList.remove('active'));
+                        const activeTab = document.querySelector(`.staff-tab[data-target="${section.id}"]`);
+                        if (activeTab) activeTab.classList.add('active');
+                    }
+                }
+            });
+        });
+    }
+    
+    updateActiveTabOnScroll();
+});
